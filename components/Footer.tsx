@@ -7,7 +7,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    Services: ['Web Development', 'App Development', 'SEO', 'eCommerce'],
+    Services: ['Web Development', 'App Development', 'SEO', 'e-Commerce'],
     Company: ['About Us', 'Our Team', 'Careers', 'Blog'],
     Resources: ['Documentation', 'Support', 'Contact', 'FAQ'],
     Legal: ['Privacy Policy', 'Terms & Conditions', 'Security', 'Sitemap'],
