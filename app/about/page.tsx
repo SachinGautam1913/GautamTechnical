@@ -167,7 +167,7 @@ export default function AboutPage() {
             <div className="space-y-6 order-1 lg:order-2">
               <div className="space-y-2">
                 <p className="text-sm font-semibold text-accent uppercase tracking-widest">Founder & CEO</p>
-                <h2 className="text-4xl sm:text-5xl font-bold text-foreground">Gautam Sharma</h2>
+                <h2 className="text-4xl sm:text-5xl font-bold text-foreground">Sachin Gautam</h2>
               </div>
 
               <div className="space-y-4 text-foreground/80 leading-relaxed">
