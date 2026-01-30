@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+<Link href="/services">Services</Link>
+
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
