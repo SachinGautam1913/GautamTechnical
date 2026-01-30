@@ -1,125 +1,243 @@
 'use client';
 
-import { Code2, Zap, Shield, Globe, TrendingUp, Users, Smartphone, Database, Lock, Search, BarChart3, Headphones, Cloud, Palette, Cog, Anchor } from 'lucide-react';
+import { useState } from 'react';
+import {
+  Code2,
+  Smartphone,
+  Search,
+  Globe,
+  Cloud,
+  Database,
+  Shield,
+  Zap,
+  Palette,
+  Cog,
+} from 'lucide-react';
 
-const services = [
+type Service = {
+  id: string;
+  icon: React.ElementType;
+  title: string;
+  shortDesc: string;
+  fullDesc: string;
+  points: string[];
+};
+
+const services: Service[] = [
   {
+    id: 'web',
     icon: Code2,
     title: 'Web Development',
-    description: 'Custom websites and web applications built with cutting-edge technologies.',
+    shortDesc: 'Crafting modern websites and web applications with clean design, powerful performance, and future-ready technology. Built to be fast, responsive, secure, and scalable—focused on seamless user experience, strong brand presence, and real business growth in a digital-first world',
+    fullDesc:
+      'We build fast, secure, and scalable websites and web applications tailored to business needs.',
+    points: [
+      'Custom website & web app',
+      'Responsive & mobile-first design',
+      'SEO-friendly architecture',
+      'Performance optimization',
+      'Secure authentication',
+      'Deployment & support',
+    ],
   },
   {
+    id: 'app',
     icon: Smartphone,
     title: 'App Development',
-    description: 'Native and cross-platform mobile applications for iOS and Android.',
+    shortDesc: 'Android & iOS mobile applications.',
+    fullDesc:
+      'End-to-end mobile app development with clean UI and scalable backend.',
+    points: [
+      'Android & iOS apps',
+      'Cross-platform (React Native)',
+      'API integration',
+      'App store deployment',
+      'Maintenance & updates',
+    ],
   },
   {
+    id: 'seo',
     icon: Search,
     title: 'SEO Services',
-    description: 'Optimize your online presence and rank higher on search engines.',
+    shortDesc: 'Improve search visibility.',
+    fullDesc:
+      'Data-driven SEO strategies to increase organic traffic and rankings.',
+    points: [
+      'Keyword research',
+      'On-page SEO',
+      'Technical SEO',
+      'Performance tracking',
+      'Analytics reports',
+    ],
   },
   {
+    id: 'ecommerce',
     icon: Globe,
     title: 'eCommerce Solutions',
-    description: 'Full-featured online stores with payment integration and analytics.',
+    shortDesc: 'Online stores that convert.',
+    fullDesc:
+      'Scalable eCommerce platforms with secure payments and analytics.',
+    points: [
+      'Custom store development',
+      'Payment gateway integration',
+      'Inventory management',
+      'Order & user handling',
+      'Speed optimization',
+    ],
   },
   {
-    icon: Zap,
-    title: 'Performance Optimization',
-    description: 'Lightning-fast applications engineered for speed and efficiency.',
-  },
-  {
-    icon: Shield,
-    title: 'Security & Compliance',
-    description: 'Enterprise-grade security with full compliance to industry standards.',
-  },
-  {
+    id: 'cloud',
     icon: Cloud,
     title: 'Cloud Infrastructure',
-    description: 'Scalable cloud solutions that grow with your business.',
+    shortDesc: 'AWS-focused cloud solutions.',
+    fullDesc:
+      'Secure and scalable cloud architecture for modern applications.',
+    points: [
+      'AWS setup & deployment',
+      'Auto-scaling',
+      'Monitoring & backups',
+      'Security hardening',
+    ],
   },
   {
-    icon: Database,
-    title: 'Database Design',
-    description: 'Robust database architectures for optimal performance and reliability.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Data Analytics',
-    description: 'Transform raw data into actionable insights for business decisions.',
-  },
-  {
+    id: 'uiux',
     icon: Palette,
     title: 'UI/UX Design',
-    description: 'Beautiful, intuitive interfaces designed for user engagement.',
+    shortDesc: 'User-centric product design.',
+    fullDesc:
+      'Design experiences that engage users and improve conversions.',
+    points: [
+      'Wireframes & prototypes',
+      'Design systems',
+      'UX research',
+      'High-fidelity UI',
+    ],
   },
   {
-    icon: Lock,
-    title: 'API Development',
-    description: 'Scalable REST and GraphQL APIs for seamless integrations.',
-  },
-  {
+    id: 'devops',
     icon: Cog,
-    title: 'DevOps Services',
-    description: 'CI/CD pipelines, automation, and infrastructure management.',
+    title: 'DevOps & Automation',
+    shortDesc: 'CI/CD & deployment pipelines.',
+    fullDesc:
+      'Automated workflows for reliable deployments and scaling.',
+    points: [
+      'CI/CD pipelines',
+      'Docker & containerization',
+      'Monitoring & alerts',
+      'Infrastructure automation',
+    ],
+  },
+  {
+    id: 'database',
+    icon: Database,
+    title: 'Database Design',
+    shortDesc: 'Optimized database architecture.',
+    fullDesc:
+      'High-performance and reliable database design and tuning.',
+    points: [
+      'Schema design',
+      'Query optimization',
+      'Backup strategy',
+      'Monitoring',
+    ],
   },
 ];
 
 export default function Services() {
-  return (
-    <section id="services" className="w-full py-16 sm:py-24 lg:py-32 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="space-y-12">
-          {/* Section Header */}
-          <div className="space-y-4 text-center">
-            <p className="text-sm font-semibold text-accent uppercase tracking-widest">
-              Our Services
-            </p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance text-foreground">
-              20+ Premium Services
-            </h2>
-            <p className="max-w-2xl mx-auto text-lg text-foreground/70">
-              From web development to AI integration, we deliver comprehensive solutions for modern businesses.
-            </p>
-          </div>
+  const [flipped, setFlipped] = useState<Record<string, boolean>>({});
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
+  const toggleFlip = (id: string) => {
+    setFlipped(prev => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  return (
+    <section className="py-24 bg-background">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold">
+            Our <span className="text-accent">Services</span>
+          </h2>
+          <p className="mt-4 text-foreground/70">
+            Click on any service to view full details.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map(service => {
+            const Icon = service.icon;
+            const isFlipped = flipped[service.id];
+
+            return (
+              <div
+                key={service.id}
+                className="relative h-[360px] perspective"
+                onClick={() => toggleFlip(service.id)}
+              >
                 <div
-                  key={index}
-                  className="service-card group"
+                  className={`absolute inset-0 transition-transform duration-500 transform-style-preserve-3d cursor-pointer ${
+                    isFlipped ? 'rotate-y-180' : ''
+                  }`}
                 >
-                  {/* Gradient Line */}
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  {/* Content */}
-                  <div className="relative space-y-4">
-                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                      <Icon className="gold-icon text-accent" size={24} />
+                  {/* FRONT */}
+                  <div className="absolute inset-0 service-card backface-hidden flex flex-col justify-between">
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                        <Icon className="text-accent" size={24} />
+                      </div>
+                      <h3 className="text-lg font-semibold">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-foreground/70">
+                        {service.shortDesc}
+                      </p>
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-foreground/70 leading-relaxed">
-                      {service.description}
+                    <p className="text-accent text-sm font-medium">
+                      Click to view details →
                     </p>
                   </div>
 
-                  {/* Hover Arrow */}
-                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-300">
-                    <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                  {/* BACK */}
+                  <div className="absolute inset-0 service-card backface-hidden rotate-y-180 overflow-y-auto">
+                    <div className="space-y-3 text-sm">
+                      <h3 className="text-lg font-semibold">
+                        {service.title}
+                      </h3>
+                      <p>{service.fullDesc}</p>
+                      <ul className="list-disc list-inside space-y-1">
+                        {service.points.map((p, i) => (
+                          <li key={i}>{p}</li>
+                        ))}
+                      </ul>
+                      <p className="text-accent text-sm font-medium pt-2">
+                        ← Click to go back
+                      </p>
+                    </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
+
+      {/* Tailwind helpers */}
+      <style jsx>{`
+        .perspective {
+          perspective: 1200px;
+        }
+        .transform-style-preserve-3d {
+          transform-style: preserve-3d;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+      `}</style>
     </section>
   );
 }

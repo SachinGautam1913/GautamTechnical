@@ -5,7 +5,7 @@ import { Phone, Mail } from 'lucide-react';
 
 export default function CTABanner() {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/1234567890', '_blank');
+    window.open('https://wa.me/7355474484', '_blank');
   };
 
   return (
@@ -39,7 +39,7 @@ export default function CTABanner() {
               Schedule Call
             </Link>
 
-            <a href="mailto:hello@gautamtechnical.com" className="gold-btn inline-flex items-center gap-2 text-sm sm:text-base">
+            <a href="mailto:gautamtechnical439@gmail.com" className="gold-btn inline-flex items-center gap-2 text-sm sm:text-base">
               <Mail className="w-5 h-5" />
               Send Email
             </a>
@@ -54,7 +54,7 @@ export default function CTABanner() {
                 </div>
                 <div>
                   <p className="text-white/60 text-sm">Phone</p>
-                  <p className="text-white font-semibold">+91 9999 999 999</p>
+                  <p className="text-white font-semibold">+91 7355474484</p>
                 </div>
               </div>
 
@@ -64,7 +64,7 @@ export default function CTABanner() {
                 </div>
                 <div>
                   <p className="text-white/60 text-sm">Email</p>
-                  <p className="text-white font-semibold">hello@gautamtechnical.com</p>
+                  <p className="text-white font-semibold">gautamtechnical439@gmail.com</p>
                 </div>
               </div>
 

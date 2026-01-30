@@ -10,15 +10,15 @@ export default function FounderSection() {
           {/* Image */}
           <div className="relative h-96 sm:h-[500px] rounded-lg overflow-hidden gold-glow">
             <Image
-              src="/founder.jpg"
-              alt="Gautam - Founder & CEO"
+              src="https://img.freepik.com/free-vector/abstract-grunge-style-coming-soon-with-black-splatter_1017-26690.jpg"
+              alt="Sachin Gautam - Founder & CEO"
               fill
               className="object-cover"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end">
               <div className="w-full p-8 text-white space-y-2">
-                <h3 className="text-2xl font-bold">Gautam</h3>
+                <h3 className="text-2xl font-bold">Sachin Gautam</h3>
                 <p className="text-accent font-semibold">Founder & CEO</p>
               </div>
             </div>
@@ -31,7 +31,7 @@ export default function FounderSection() {
                 Meet Our Founder
               </p>
               <h2 className="text-4xl sm:text-5xl font-bold text-foreground text-balance">
-                Gautam's Vision for Premium Tech
+                Sachin Gautam's Vision for Premium Tech
               </h2>
             </div>
 
@@ -66,7 +66,7 @@ export default function FounderSection() {
 
             {/* CTA */}
             <button className="gold-btn inline-flex items-center gap-2">
-              Schedule a Call with Gautam
+              Schedule a Call with Sachin Gautam
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>

@@ -155,7 +155,7 @@ export default function BookServicePage() {
                   className={`w-full px-4 py-3 border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent transition-colors ${
                     errors.name ? 'border-red-500' : 'border-border'
                   }`}
-                  placeholder="John Doe"
+                  placeholder="Name"
                 />
                 {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
               </div>
@@ -173,7 +173,7 @@ export default function BookServicePage() {
                   className={`w-full px-4 py-3 border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent transition-colors ${
                     errors.email ? 'border-red-500' : 'border-border'
                   }`}
-                  placeholder="john@example.com"
+                  placeholder="Mail"
                 />
                 {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
               </div>
@@ -191,7 +191,7 @@ export default function BookServicePage() {
                   value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent transition-colors"
-                  placeholder="+1 (555) 123-4567"
+                  placeholder="Number"
                 />
               </div>
               <div>
@@ -229,6 +229,9 @@ export default function BookServicePage() {
                 <option value="app">App Development</option>
                 <option value="cloud">Cloud Infrastructure</option>
                 <option value="uiux">UI/UX Design</option>
+                <option value="logo-design">Logo Design</option>
+                <option value="portfolio">Portfolio</option>
+                <option value="consultation">Consultation</option>
                 <option value="other">Other</option>
               </select>
               {errors.service && <p className="text-red-500 text-sm mt-1">{errors.service}</p>}
@@ -266,11 +269,13 @@ export default function BookServicePage() {
                   className="w-full px-4 py-3 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent transition-colors"
                 >
                   <option value="">Select budget range</option>
-                  <option value="under-5k">Under $5,000</option>
-                  <option value="5k-15k">$5,000 - $15,000</option>
-                  <option value="15k-50k">$15,000 - $50,000</option>
-                  <option value="50k-100k">$50,000 - $100,000</option>
-                  <option value="over-100k">Over $100,000</option>
+                  <option value="under-5k">Under ₹5,000</option>
+                  <option value="5k-15k">₹5,000 - ₹15,000</option>
+                  <option value="15k-50k">₹15,000 - ₹50,000</option>
+                  <option value="50k-100k">₹50,000 - ₹1,00,000</option>
+                  <option value="over-100k">Over ₹1,00,000</option>
+                  <option value="custom">Custom</option>   
+                  <option value="not-sure">Not sure yet</option>
                 </select>
               </div>
               <div>
@@ -287,9 +292,13 @@ export default function BookServicePage() {
                   <option value="">Select timeline</option>
                   <option value="asap">ASAP</option>
                   <option value="1-month">Within 1 month</option>
-                  <option value="2-3-months">2-3 months</option>
-                  <option value="3-6-months">3-6 months</option>
-                  <option value="6-months-plus">6+ months</option>
+                  <option value="20-30-days">20-30 days</option>
+                  <option value="40-50-days">40-50 days</option>
+                  <option value="1-2-months">1-2 months</option>
+                  <option value="3-3.5-months">3-3.5months</option>
+                  <option value="4-5-months">4-5 months</option>
+                  <option value="6-months">6 months</option>
+                  <option value="plus">6+ months</option>
                 </select>
               </div>
             </div>
