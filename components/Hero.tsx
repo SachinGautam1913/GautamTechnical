@@ -44,7 +44,7 @@ export default function Hero() {
             {/* Trust Indicators */}
             <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-12 border-t border-white/20">
               <div>
-                <p className="text-2xl sm:text-3xl font-bold text-accent">500+</p>
+                <p className="text-2xl sm:text-3xl font-bold text-accent">25+</p>
                 <p className="text-xs sm:text-sm text-white/70 mt-1">Happy Clients</p>
               </div>
               <div>

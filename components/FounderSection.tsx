@@ -3,10 +3,16 @@
 import Image from 'next/image';
 
 export default function FounderSection() {
+  const phoneNumber = '+917355474484';
+
+  const whatsappLink =
+    'https://wa.me/917355474484?text=Hi%20Sachin,%20I%20would%20like%20to%20schedule%20a%20call%20to%20discuss%20my%20project.';
+
   return (
     <section id="about" className="w-full py-16 sm:py-24 lg:py-32 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
           {/* Image */}
           <div className="relative h-96 sm:h-[500px] rounded-lg overflow-hidden gold-glow">
             <Image
@@ -26,52 +32,71 @@ export default function FounderSection() {
 
           {/* Content */}
           <div className="space-y-8">
-            <div className="space-y-4">
+            <div>
               <p className="text-sm font-semibold text-accent uppercase tracking-widest">
                 Meet Our Founder
               </p>
-              <h2 className="text-4xl sm:text-5xl font-bold text-foreground text-balance">
-                Sachin Gautam's Vision for Premium Tech
+              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mt-2">
+                Let’s Talk Business, Directly
               </h2>
             </div>
 
-            {/* Bio */}
-            <div className="space-y-6">
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                With 15+ years of experience in enterprise technology, Gautam founded GautamTechnical with a singular vision: to provide premium, founder-led technical solutions that empower businesses to scale.
-              </p>
+            <p className="text-lg text-foreground/80 leading-relaxed">
+              Have a serious project in mind? Connect directly with Sachin to
+              discuss your goals, challenges, and the right tech strategy to
+              move forward with confidence.
+            </p>
 
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                Starting from a passion for solving complex technical challenges, Gautam has built a team of elite developers and engineers who share the commitment to excellence, innovation, and customer success.
-              </p>
+            {/* ✅ DUAL CTA */}
+            <div className="flex flex-col sm:flex-row gap-4">
 
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                Today, GautamTechnical stands as a trusted partner for 500+ businesses worldwide, delivering custom solutions that drive growth and transformation.
-              </p>
+              {/* 📞 CALL */}
+              <a
+                href={`tel:${phoneNumber}`}
+                className="gold-btn inline-flex items-center justify-center gap-2"
+              >
+                Call Now
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2h-1C9.163 19 5 14.837 5 9V8a2 2 0 01-2-2z"
+                  />
+                </svg>
+              </a>
+
+              {/* 💬 WHATSAPP */}
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gold-btn-outline inline-flex items-center justify-center gap-2"
+              >
+                WhatsApp Message
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 15a4 4 0 01-4 4H7l-4 4V7a4 4 0 014-4h10a4 4 0 014 4z"
+                  />
+                </svg>
+              </a>
+
             </div>
-
-            {/* Expertise */}
-            <div className="space-y-4">
-              <p className="text-sm font-semibold text-accent uppercase tracking-widest">
-                Areas of Expertise
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {['Web Development', 'App Development', 'Cloud Architecture', 'DevOps', 'AI/ML Solutions', 'eCommerce', 'Data Analytics'].map((skill) => (
-                  <span key={skill} className="px-4 py-2 bg-card border border-accent/20 rounded-full text-foreground/80 font-medium hover:border-accent transition-colors duration-300">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* CTA */}
-            <button className="gold-btn inline-flex items-center gap-2">
-              Schedule a Call with Sachin Gautam
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </button>
           </div>
+
         </div>
       </div>
     </section>
