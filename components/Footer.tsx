@@ -17,7 +17,7 @@ export default function Footer() {
     { icon: Twitter, href: 'https://twitter.com' },
     { icon: Linkedin, href: 'https://linkedin.com' },
     { icon: Github, href: 'https://github.com' },
-    { icon: Mail, href: 'mailto:hello@gautamtechnical.com' },
+    { icon: Mail, href: 'mailto:gautamtechnical439@gmail.com' },
   ];
 
   return (
@@ -36,8 +36,7 @@ export default function Footer() {
                 <span className="font-bold text-lg text-white">GautamTechnical</span>
               </div>
               <p className="text-sm text-white/70">
-                Premium enterprise-grade technical solutions for modern businesses.
-              </p>
+                  Delivering premium, enterprise-grade technology for forward-thinking businesses.              </p>
               {/* Social Links */}
               <div className="flex items-center gap-3 pt-4">
                 {socialLinks.map(({ icon: Icon, href }, index) => (
