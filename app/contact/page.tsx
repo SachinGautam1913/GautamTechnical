@@ -75,8 +75,7 @@ export default function ContactPage() {
               Let's Build Something <span className="text-accent">Amazing Together</span>
             </h1>
             <p className="text-lg text-foreground/70 text-balance">
-              Have a project in mind? We'd love to hear about it. Get in touch with our team and let's discuss how we can help transform your vision.
-            </p>
+              Have a project in mind? Let’s turn it into something impactful. Connect with our team and discover how we can transform your vision into a scalable, high-performing digital solution            </p>
           </div>
         </div>
       </section>
@@ -128,7 +127,7 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <p className="text-foreground font-medium">Thank you for your message!</p>
-                    <p className="text-foreground/70 text-sm">We'll get back to you within 24 hours.</p>
+                    <p className="text-foreground/70 text-sm">We'll get back to you within 2 business days.</p>
                   </div>
                 </div>
               ) : (
@@ -205,7 +204,7 @@ export default function ContactPage() {
                   </li>
                   <li className="flex gap-3">
                     <span className="text-accent font-bold">✓</span>
-                    <span className="text-foreground/80">Experienced team with 10+ years in the industry</span>
+                    <span className="text-foreground/80">Experienced team with 2.5+ years in the industry</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-accent font-bold">✓</span>
@@ -217,7 +216,7 @@ export default function ContactPage() {
                   </li>
                   <li className="flex gap-3">
                     <span className="text-accent font-bold">✓</span>
-                    <span className="text-foreground/80">Portfolio of 500+ successful projects</span>
+                    <span className="text-foreground/80">Portfolio of 25+ successful projects</span>
                   </li>
                 </ul>
               </div>
