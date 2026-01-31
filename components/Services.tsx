@@ -68,6 +68,8 @@ const services: Service[] = [
       'Technical SEO',
       'Performance tracking',
       'Analytics reports',
+      'Content optimization',
+      'Link building',
     ],
   },
   {
