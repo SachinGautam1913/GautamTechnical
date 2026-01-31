@@ -44,9 +44,9 @@ const services: Service[] = [
     id: 'app',
     icon: Smartphone,
     title: 'App Development',
-    shortDesc: 'Android & iOS mobile applications.',
+    shortDesc: 'Android & iOS mobile application development using native and cross-platform frameworks. We build high-performance, secure, and scalable apps with clean UI, smooth UX, robust backend integration, and modern architecture—designed to deliver speed, reliability, and seamless experiences across all devices.',
     fullDesc:
-      'End-to-end mobile app development with clean UI and scalable backend.',
+      'End-to-end mobile app development—from pixel-perfect, clean UI to a secure, scalable backend. We build fast, reliable apps with smooth UX, robust APIs, cloud-ready architecture, and performance that scales effortlessly with your users and business growth.',
     points: [
       'Android & iOS apps',
       'Cross-platform (React Native)',
