@@ -59,7 +59,7 @@ const services: Service[] = [
     id: 'seo',
     icon: Search,
     title: 'SEO Services',
-    shortDesc: 'Improve search visibility.',
+    shortDesc: 'Improve search visibility, rankings, and drive organic traffic, conversions and more.',
     fullDesc:
       'Data-driven SEO strategies to increase organic traffic and rankings.',
     points: [
