@@ -27,8 +27,7 @@ export default function Hero() {
 
             {/* Subheading */}
             <p className="text-lg sm:text-xl text-white/90 leading-relaxed text-balance max-w-2xl">
-              Web Development • App Development • SEO • eCommerce • 20+ Services
-            </p>
+                Modern Web • Apps • Growth (SEO) • eCommerce • 20+ Services            </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
