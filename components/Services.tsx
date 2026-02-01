@@ -110,7 +110,7 @@ const services: Service[] = [
     id: 'ecommerce',
     icon: Globe,
     title: 'eCommerce Solutions',
-    shortDesc: 'Online stores that convert.',
+    shortDesc: 'Online stores built to convert, combining clean design, smooth user journeys, and optimized performance. We create fast, secure, and scalable eCommerce experiences that engage users, build trust, and turn visitors into paying customers.',
     fullDesc:
       'Scalable eCommerce platforms with secure payments and analytics.',
     points: [
@@ -135,7 +135,7 @@ const services: Service[] = [
     id: 'cloud',
     icon: Cloud,
     title: 'Cloud Infrastructure',
-    shortDesc: 'AWS-focused cloud solutions.',
+    shortDesc: 'AWS-focused cloud solutions designed for scalability, security, and performance. We help businesses deploy, manage, and optimize cloud infrastructure, reduce costs, ensure reliability, and build resilient, high-availability systems that support long-term growth and innovation.',
     fullDesc:
       'Secure and scalable cloud architecture for modern applications.',
     points: [
@@ -165,9 +165,9 @@ const services: Service[] = [
     id: 'uiux',
     icon: Palette,
     title: 'UI/UX Design',
-    shortDesc: 'User-centric product design.',
+    shortDesc: 'Creating intuitive and engaging user experiences that guide users seamlessly, boost interaction, and drive higher conversions. We focus on user-first design, usability, and visual clarity to turn visitors into loyal customers and fuel long-term digital growth.',
     fullDesc:
-      'Design experiences that engage users and improve conversions.',
+      'Creating intuitive and engaging user experiences that drive conversions.',
     points: [
       'Wireframes & prototypes',
       'Design systems',
@@ -190,7 +190,7 @@ const services: Service[] = [
     id: 'devops',
     icon: Cog,
     title: 'DevOps & Automation',
-    shortDesc: 'CI/CD & deployment pipelines.',
+    shortDesc: 'CI/CD and deployment pipelines built to automate testing, integration, and releases. We streamline deployments, reduce errors, ensure faster delivery, and maintain reliable, production-ready systems using modern DevOps best practices.',
     fullDesc:
       'Automated workflows for reliable deployments and scaling.',
     points: [
@@ -210,7 +210,7 @@ const services: Service[] = [
     id: 'database',
     icon: Database,
     title: 'Database Design',
-    shortDesc: 'Optimized database architecture.',
+    shortDesc: 'Optimized database architecture designed for performance, scalability, and reliability. We structure data efficiently, improve query performance, reduce latency, and ensure secure, maintainable systems that support high-traffic, data-driven applications.',
     fullDesc:
       'High-performance and reliable database design and tuning.',
     points: [
