@@ -32,7 +32,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
               <Link href="/contact" className="gold-btn inline-flex items-center justify-center gap-2">
-                Get Started Now
+                Get Started Now . 
                 <ArrowRight size={20} />
               </Link>
               <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 rounded-md border-2 border-white/20 text-white font-medium hover:bg-white/10 transition-all duration-300">
@@ -43,7 +43,7 @@ export default function Hero() {
             {/* Trust Indicators */}
             <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-12 border-t border-white/20">
               <div>
-                <p className="text-2xl sm:text-3xl font-bold text-accent">25+</p>
+                <p className="text-2xl sm:text-3xl font-bold text-accent">30+</p>
                 <p className="text-xs sm:text-sm text-white/70 mt-1">Happy Clients</p>
               </div>
               <div>
