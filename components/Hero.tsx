@@ -35,7 +35,7 @@ export default function Hero() {
                 Get Started Now . 
                 <ArrowRight size={20} />
               </Link>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 rounded-md border-2 border-white/20 text-white font-medium hover:bg-white/10 transition-all duration-300">
+              <a href="https://wa.me/7355474484" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 rounded-md border-2 border-white/20 text-white font-medium hover:bg-white/10 transition-all duration-300">
                 Schedule a Call
               </a>
             </div>
