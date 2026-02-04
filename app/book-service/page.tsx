@@ -60,12 +60,30 @@ export default function BookServicePage() {
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      const response = await fetch('http://localhost:5000/api/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: 'book-service'
+        }),
+      });
 
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setIsSubmitting(false);
+      if (response.ok) {
+        console.log('Form submitted successfully');
+        setIsSubmitted(true);
+      } else {
+        alert('Sorry, there was an error sending your request. Please try again.');
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Sorry, there was an error sending your request. Please try again.');
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {

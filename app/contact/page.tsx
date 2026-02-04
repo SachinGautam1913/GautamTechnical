@@ -25,14 +25,34 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("[v0] Form submitted:", formData);
     setSubmitted(true);
-    setTimeout(() => {
+
+    try {
+      const response = await fetch('http://localhost:5000/api/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: 'contact'
+        }),
+      });
+
+      if (response.ok) {
+        alert('Thank you for your message! We\'ll get back to you within 2 business days.');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        alert('Sorry, there was an error sending your message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Sorry, there was an error sending your message. Please try again.');
+    } finally {
       setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    }, 3000);
+    }
   };
 
   const contactMethods = [
