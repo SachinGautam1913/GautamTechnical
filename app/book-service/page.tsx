@@ -29,6 +29,7 @@ export default function BookServicePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submissionError, setSubmissionError] = useState<string>('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -56,26 +57,35 @@ export default function BookServicePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:5000/api/messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ 
-        name: formData.name, 
-        email: formData.email, 
-        phone: formData.phone, 
-        company: formData.company,
-        service: formData.service,
-        projectDetails: formData.projectDetails,
-        budget: formData.budget,
-        timeline: formData.timeline,
-        preferredContact: formData.preferredContact,
-        additionalInfo: formData.additionalInfo,
-        source: "book-service" 
-      })
-    });
+    if (!validateForm()) return;
 
-    if (res.ok) alert("Message sent!");
-    else alert("Error");
+    setIsSubmitting(true);
+    setSubmissionError('');
+
+    const message = `Service: ${formData.service}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline}\nPreferred Contact Method: ${formData.preferredContact}\nAdditional Info: ${formData.additionalInfo}`;
+
+    try {
+      const res = await fetch("http://localhost:5000/api/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+          name: formData.name, 
+          email: formData.email, 
+          message,
+          source: "book-service" 
+        })
+      });
+
+      if (res.ok) {
+        setIsSubmitted(true);
+      } else {
+        setSubmissionError('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      setSubmissionError('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -362,6 +372,7 @@ export default function BookServicePage() {
                 </>
               )}
             </button>
+            {submissionError && <p className="text-red-500 text-center mt-4">{submissionError}</p>}
           </form>
 
           <div className="mt-8 text-center">
