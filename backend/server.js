@@ -27,7 +27,7 @@ app.use('/api/messages', messageRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Backend running on port 5000' });
+  res.json({ status: "Backend running on port 5000" });
 });
 
 // Error handling middleware

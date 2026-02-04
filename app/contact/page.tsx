@@ -27,32 +27,15 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
 
-    try {
-      const response = await fetch('http://localhost:5000/api/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          source: 'contact'
-        }),
-      });
+    const res = await fetch("http://localhost:5000/api/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.phone, message: formData.message, source: "contact-form" })
+    });
 
-      if (response.ok) {
-        alert('Thank you for your message! We\'ll get back to you within 2 business days.');
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      } else {
-        alert('Sorry, there was an error sending your message. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('Sorry, there was an error sending your message. Please try again.');
-    } finally {
-      setSubmitted(false);
-    }
+    if (res.ok) alert("Message sent!");
+    else alert("Error");
   };
 
   const contactMethods = [

@@ -56,34 +56,26 @@ export default function BookServicePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validateForm()) return;
+    const res = await fetch("http://localhost:5000/api/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ 
+        name: formData.name, 
+        email: formData.email, 
+        phone: formData.phone, 
+        company: formData.company,
+        service: formData.service,
+        projectDetails: formData.projectDetails,
+        budget: formData.budget,
+        timeline: formData.timeline,
+        preferredContact: formData.preferredContact,
+        additionalInfo: formData.additionalInfo,
+        source: "book-service" 
+      })
+    });
 
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch('http://localhost:5000/api/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          source: 'book-service'
-        }),
-      });
-
-      if (response.ok) {
-        console.log('Form submitted successfully');
-        setIsSubmitted(true);
-      } else {
-        alert('Sorry, there was an error sending your request. Please try again.');
-        setIsSubmitting(false);
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('Sorry, there was an error sending your request. Please try again.');
-      setIsSubmitting(false);
-    }
+    if (res.ok) alert("Message sent!");
+    else alert("Error");
   };
 
   if (isSubmitted) {

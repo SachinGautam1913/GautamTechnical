@@ -2,6 +2,12 @@ const nodemailer = require('nodemailer');
 
 const sendEmailNotification = async (messageData) => {
   try {
+    // Check if email configuration is available
+    if (!process.env.EMAIL_HOST || !process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.log('Email configuration not complete, skipping email notification');
+      return;
+    }
+
     // Create transporter
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -41,7 +47,7 @@ Received at: ${new Date().toLocaleString()}
     await transporter.sendMail(mailOptions);
     console.log('Email notification sent successfully');
   } catch (error) {
-    console.error('Email sending failed:', error);
+    console.error('Email sending failed:', error.message);
     // Don't throw error - we still want to save the message even if email fails
   }
 };
