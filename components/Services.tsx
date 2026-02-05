@@ -82,7 +82,7 @@ const services: Service[] = [
     shortDesc: 'Improve search visibility, boost rankings, and drive consistent organic traffic that converts. We help brands enhance their online presence, attract the right audience, increase engagement, and achieve long-term, sustainable digital growth through smart SEO strategies..',
   
     fullDesc:
-      'Data-driven SEO strategies to increase organic traffic and rankings.',
+      'Data-driven SEO strategies to increase organic traffic and rankings and drive long-term growth with measurable results.',
     points: [
       'Keyword research',
       'On-page SEO',
