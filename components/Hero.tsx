@@ -22,7 +22,8 @@ export default function Hero() {
 
             {/* Main Headline */}
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-balance text-white">
-              Building Premium <span className="text-accent">Digital Solutions</span> Code That Converts
+              Building Premium <span className="text-accent">Digital Solutions</span><br />
+               Where Clean Code Meets Growth, Speed & Real Results
             </h1>
 
             {/* Subheading */}
