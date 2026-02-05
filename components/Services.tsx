@@ -112,7 +112,7 @@ const services: Service[] = [
     title: 'eCommerce Solutions',
     shortDesc: 'Online stores built to convert, combining clean design, smooth user journeys, and optimized performance. We create fast, secure, and scalable eCommerce experiences that engage users, build trust, and turn visitors into paying customers.',
     fullDesc:
-      'Scalable eCommerce platforms with secure payments and analytics.',
+      'Scalable eCommerce platforms with secure payments and analytics .',
     points: [
       'Custom store development',
       'Payment gateway integration',
@@ -137,7 +137,7 @@ const services: Service[] = [
     title: 'Cloud Infrastructure',
     shortDesc: 'AWS-focused cloud solutions designed for scalability, security, and performance. We help businesses deploy, manage, and optimize cloud infrastructure, reduce costs, ensure reliability, and build resilient, high-availability systems that support long-term growth and innovation.',
     fullDesc:
-      'Secure and scalable cloud architecture for modern applications.',
+      'Secure and scalable cloud architecture for modern applications and growth. ',
     points: [
       'AWS setup & deployment',
       'Auto-scaling',
