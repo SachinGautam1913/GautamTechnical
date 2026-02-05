@@ -3,14 +3,14 @@
 import { Check } from 'lucide-react';
 
 const benefits = [
-  'Founder-led expertise with 7+ years of experience',
-  '30+ successful projects delivered',
-  '24/7 dedicated support & maintenance',
-  'Transparent pricing, no hidden costs',
-  'Agile development for faster delivery',
-  'MSME certified & industry compliant',
-  'Custom solutions for your business',
-  'Post-launch optimization & support',
+  "Founder-driven strategy & execution backed by 7+ years of real-world experience",
+  "30+ scalable digital products successfully launched and optimized",
+  "24/7 priority support with performance tracking and issue prevention",
+  "Radical pricing transparency — no surprises, no fine print",
+  "Agile delivery model built for speed, flexibility and quality",
+  "MSME-certified processes with a strong focus on security & compliance",
+  "Bespoke solutions engineered around your users, market and growth goals",
+  "Ongoing optimization, scaling support and product evolution post-launch"
 ];
 
 export default function WhyChooseUs() {
