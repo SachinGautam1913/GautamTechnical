@@ -228,6 +228,7 @@ const services = [
       'Caching implementation',
       'CDN setup',
       'Core Web Vitals optimization',
+      'Database query optimization',
     ],
     idealFor: ['E-commerce', 'Media sites', 'SaaS products', 'High-traffic apps'],
   },
