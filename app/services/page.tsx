@@ -278,6 +278,7 @@ const services = [
       'Brand identity guidelines',
       'Vector and raster formats',
       'Logo usage recommendations',
+      'Revisions and finalization'
     ],
   },
 ];
