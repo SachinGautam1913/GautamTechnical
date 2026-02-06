@@ -73,6 +73,7 @@ const services: Service[] = [
       'Backend development',
       'Cloud integration',
       'Scalable architecture',
+      'Testing & QA',
     ],
   },
   {
