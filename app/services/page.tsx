@@ -201,7 +201,7 @@ const services = [
     id: 'security',
     icon: Shield,
     title: 'Web Application Security & Hardening',
-    shortDesc: 'Secure applications protected against threats.',
+    shortDesc: 'Secure applications protected against threats and vulnerabilities with best practices and modern security standards.',
     fullDesc:
       'We implement comprehensive security measures to protect your applications from vulnerabilities and cyber threats.',
     includes: [
