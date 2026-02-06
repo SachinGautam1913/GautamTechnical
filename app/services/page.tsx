@@ -246,6 +246,7 @@ const services = [
       'Test automation',
       'Quality documentation',
       'Pre-launch testing',
+      'Post-launch monitoring',
     ],
     idealFor: ['Production releases', 'Complex applications', 'Enterprise software'],
   },
