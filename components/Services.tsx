@@ -184,6 +184,7 @@ const services: Service[] = [
       'User personas',
       'Design workshops',
       'Style guides',
+      'Design audits',
     ],
   },
   {
