@@ -204,6 +204,9 @@ const services: Service[] = [
       'Cloud integration',
       'Load balancing',
       'Performance monitoring',
+      'Security automation',
+      'Disaster recovery',
+      'DevOps consulting',
     ],
   },
   {
