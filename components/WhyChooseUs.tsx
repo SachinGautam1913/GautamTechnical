@@ -12,7 +12,8 @@ const benefits = [
   "Bespoke solutions engineered around your users, market and growth goals",
   "Ongoing optimization, scaling support and product evolution post-launch",
   "A trusted partner for startups, SMBs and enterprises looking to build modern web products that drive growth and success",
-  "A proven track record of delivering high-quality, scalable web products that meet the unique needs of our clients and their users"
+  "A proven track record of delivering high-quality, scalable web products that meet the unique needs of our clients and their users",
+  "A commitment to transparency, communication and collaboration throughout the entire product development process, ensuring that our clients are always informed and involved in the decision-making process",
 ];
 
 export default function WhyChooseUs() {
