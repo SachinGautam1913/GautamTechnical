@@ -211,6 +211,7 @@ const services = [
       'Authentication hardening',
       'Data encryption',
       'Security monitoring',
+      'Penetration testing',
     ],
     idealFor: ['Financial apps', 'Healthcare', 'E-commerce', 'Enterprise software'],
   },
