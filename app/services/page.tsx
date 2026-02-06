@@ -262,6 +262,7 @@ const services = [
       'Bug fixes & support',
       'Feature enhancements',
       '24/7 technical support',
+      'Cloud infrastructure management',
     ],
     idealFor: ['Established businesses', 'Long-term partnerships', 'Critical applications'],
   },
