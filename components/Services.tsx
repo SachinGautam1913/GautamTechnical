@@ -226,6 +226,7 @@ const services: Service[] = [
       'Data warehousing',
       'ETL processes',
       'Database security',
+      'Cloud database solutions',
     ],
   },
 ];
