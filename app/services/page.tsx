@@ -195,6 +195,7 @@ const services = [
       'Mobile optimization',
       'SEO optimization',
       'Copywriting consultation',
+      'Lead capture forms',
     ],
     idealFor: ['Marketing campaigns', 'Product launches', 'Lead generation'],
   },
