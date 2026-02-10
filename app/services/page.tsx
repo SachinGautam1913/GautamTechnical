@@ -242,7 +242,7 @@ const services = [
   {
     id: 'testing',
     icon: CheckCircle,
-    title: 'Testing, QA & Bug Fixing',
+    title: 'Testing, QA & Bug Fixing and Debugging with Test Automation',
     shortDesc: 'Comprehensive testing and quality assurance.',
     fullDesc:
       'We ensure your applications are thoroughly tested, bug-free, and ready for production with comprehensive QA processes.',
