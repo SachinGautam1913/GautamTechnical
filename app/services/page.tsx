@@ -235,6 +235,7 @@ const services = [
       'CDN setup',
       'Core Web Vitals optimization',
       'Database query optimization',
+      'Third-party script management',
     ],
     idealFor: ['E-commerce', 'Media sites', 'SaaS products', 'High-traffic apps'],
   },
