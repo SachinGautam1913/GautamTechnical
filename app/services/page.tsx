@@ -196,7 +196,8 @@ const services = [
       'SEO optimization',
       'Copywriting consultation',
       'Lead capture forms',
-      ''
+      'Third-party marketing integrations',
+      
     ],
     idealFor: ['Marketing campaigns', 'Product launches', 'Lead generation'],
   },
