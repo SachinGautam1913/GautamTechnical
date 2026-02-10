@@ -216,6 +216,7 @@ const services = [
       'Data encryption',
       'Security monitoring',
       'Penetration testing',
+      'Incident response planning',
     ],
     idealFor: ['Financial apps', 'Healthcare', 'E-commerce', 'Enterprise software'],
   },
