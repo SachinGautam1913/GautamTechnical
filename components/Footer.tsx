@@ -89,7 +89,7 @@ export default function Footer() {
               {[
                 { icon: Twitter, href: 'https://twitter.com' },
                 { icon: Linkedin, href: 'https://linkedin.com/in/sachin-gautam11110112/' },
-                { icon: Github, href: 'https://github.com' },
+                { icon: Github, href: 'https://github.com/SachinGautam1913' },
                 { icon: Mail, href: 'mailto:gautamtechnical439@gmail.com' },
               ].map(({ icon: Icon, href }, index) => (
                 <Link
