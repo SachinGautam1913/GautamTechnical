@@ -113,7 +113,7 @@ const services: Service[] = [
     title: 'eCommerce Solutions',
     shortDesc: 'Online stores built to convert, combining clean design, smooth user journeys, and optimized performance. We create fast, secure, and scalable eCommerce experiences that engage users, build trust, and turn visitors into paying customers.',
     fullDesc:
-      'Scalable eCommerce platforms with secure payments and analytics .',
+      'Scalable eCommerce platforms with secure payments and analytics with .',
     points: [
       'Custom store development',
       'Payment gateway integration',

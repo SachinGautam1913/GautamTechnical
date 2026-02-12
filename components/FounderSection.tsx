@@ -44,7 +44,7 @@ export default function FounderSection() {
             <p className="text-lg text-foreground/80 leading-relaxed">
               Have a serious project in mind? Connect directly with Sachin to
               discuss your goals, challenges, and the right tech strategy to
-              move forward with confidence.
+              move forward with confidence .
             </p>
 
             {/* ✅ DUAL CTA */}
