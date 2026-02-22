@@ -197,7 +197,7 @@ const services = [
       'Copywriting consultation',
       'Lead capture forms',
       'Third-party marketing integrations',
-      
+
     ],
     idealFor: ['Marketing campaigns', 'Product launches', 'Lead generation'],
   },
@@ -280,9 +280,9 @@ const services = [
     id: 'Logo Design',
     icon: Code2,
     title: 'Logo Design',
-    shortDesc:  'Professional logo design services.',
+    shortDesc: 'Professional logo design services.',
     fullDesc:
-      'We create unique and memorable logos that effectively represent your brand identity and values.', 
+      'We create unique and memorable logos that effectively represent your brand identity and values.',
     includes: [
       'Custom logo design',
       'Multiple logo variations',
@@ -332,7 +332,9 @@ export default function ServicesPage() {
             const isOpen = activeServiceId === service.id;
 
             return (
-              <div key={service.id} className="service-card">
+              <div key={service.id} className={`service-card ${
+  isOpen ? "col-span-1 md:col-span-2 lg:col-span-4" : ""
+}`}>
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                     <Icon className="text-accent" />

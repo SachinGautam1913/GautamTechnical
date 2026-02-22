@@ -333,7 +333,7 @@ export default function BookServicePage() {
     email: '',
     phone: '',
     company: '',
-    projectDetails: '',
+    message: '',
     budget: '',
     timeline: '',
     preferredContact: 'email',
@@ -359,7 +359,7 @@ export default function BookServicePage() {
         email: formData.email, 
         phone: formData.phone, 
         company: formData.company,
-        projectDetails: formData.projectDetails,
+        message: formData.message,
         budget: formData.budget,
         timeline: formData.timeline,
         preferredContact: formData.preferredContact,
@@ -564,11 +564,11 @@ export default function BookServicePage() {
                 Project Details *
               </label>
               <textarea
-                id="projectDetails"
-                name="projectDetails"
+                id="message"
+                name="message"
                 required
                 rows={4}
-                value={formData.projectDetails}
+                value={formData.message}
                 onChange={handleInputChange}
                 placeholder="Tell us about your project requirements, goals, and any specific features you need..."
                 className="w-full px-4 py-3 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent resize-none transition-colors"

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 <Link href="/services">Services</Link>
 
 
@@ -23,10 +24,16 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <div className="w-10 h-10 bg-accent rounded flex items-center justify-center text-primary font-bold">
-              GT
-            </div>
-            <span className="hidden sm:inline text-foreground">GautamTechnical</span>
+            <Image
+              src="/logo.png"
+              alt="GautamTechnical Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
+            <span className="hidden sm:inline text-foreground">
+              GautamTechnical
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

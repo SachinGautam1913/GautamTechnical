@@ -4,7 +4,7 @@ const { sendEmailNotification } = require('../services/emailService');
 const createMessage = async (req, res) => {
   try {
     const { name, email, phone, subject, message, source } = req.body;
-
+    console.log(req.body);
     // Validate required fields
     if (!name || !email || !message || !source) {
       return res.status(400).json({

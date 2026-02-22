@@ -3,6 +3,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Award, Users, Target, Zap, TrendingUp, ArrowRight, Star } from 'lucide-react';
+import Image from 'next/image';
 
 const coreValues = [
   {
@@ -78,8 +79,7 @@ export default function AboutPage() {
 
           <div className="h-96 rounded-lg border border-border flex items-center justify-center bg-card">
             <div className="text-center">
-              <p className="text-5xl font-bold text-accent">GautamTechnical</p>
-              <p className="mt-2 text-sm text-foreground/70">Since 2025</p>
+              <Image src="/logo.png" alt="About GautamTechnical" width={400} height={300} />
             </div>
           </div>
         </div>
