@@ -5,11 +5,13 @@ This is the backend API for handling form submissions from the website.
 ## Setup Instructions
 
 1. **Navigate to backend folder:**
+
    ```bash
    cd backend
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
@@ -47,6 +49,7 @@ This is the backend API for handling form submissions from the website.
 ## Database Schema
 
 Messages stored in MongoDB with fields:
+
 - `name`, `email` (required)
 - `phone`, `subject`
 - `message` (required)

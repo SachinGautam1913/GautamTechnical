@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useParams } from 'next/navigation';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useState } from "react";
+import { useParams } from "next/navigation";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   Code2,
   Smartphone,
@@ -25,7 +25,7 @@ import {
   Layers,
   Lock,
   Cog,
-} from 'lucide-react';
+} from "lucide-react";
 
 type Service = {
   id: string;
@@ -42,283 +42,305 @@ type Service = {
 
 const services: Service[] = [
   {
-    id: 'web',
+    id: "web",
     icon: Code2,
-    title: 'Custom Web Development',
-    shortDesc: 'Modern, scalable websites and web applications.',
+    title: "Custom Web Development",
+    shortDesc: "Modern, scalable websites and web applications.",
     fullDesc:
-      'We build fast, secure, and scalable web applications tailored to your business goals using modern frameworks and best practices.',
+      "We build fast, secure, and scalable web applications tailored to your business goals using modern frameworks and best practices.",
     includes: [
-      'Custom website & web app development',
-      'Responsive & mobile-first design',
-      'SEO-friendly architecture',
-      'Performance optimization',
-      'Secure authentication & APIs',
-      'Deployment & maintenance support',
+      "Custom website & web app development",
+      "Responsive & mobile-first design",
+      "SEO-friendly architecture",
+      "Performance optimization",
+      "Secure authentication & APIs",
+      "Deployment & maintenance support",
     ],
-    idealFor: ['Startups', 'Businesses', 'SaaS products'],
-    startingPrice: '₹2,500',
-    estimatedTime: '2-4 weeks',
+    idealFor: ["Startups", "Businesses", "SaaS products"],
+    startingPrice: "₹2,500",
+    estimatedTime: "2-4 weeks",
     rating: 4.9,
   },
   {
-    id: 'fullstack',
+    id: "fullstack",
     icon: Layers,
-    title: 'Full-Stack Application Development',
-    shortDesc: 'Complete end-to-end application solutions.',
+    title: "Full-Stack Application Development",
+    shortDesc: "Complete end-to-end application solutions.",
     fullDesc:
-      'We develop comprehensive full-stack applications with modern architectures, from frontend to backend, ensuring seamless user experiences and robust functionality.',
+      "We develop comprehensive full-stack applications with modern architectures, from frontend to backend, ensuring seamless user experiences and robust functionality.",
     includes: [
-      'Frontend & backend development',
-      'Database design & integration',
-      'API development & documentation',
-      'Authentication & security',
-      'Real-time features',
-      'Scalable architecture',
+      "Frontend & backend development",
+      "Database design & integration",
+      "API development & documentation",
+      "Authentication & security",
+      "Real-time features",
+      "Scalable architecture",
     ],
-    idealFor: ['Complex applications', 'Enterprise solutions', 'Product companies'],
-    startingPrice: '₹15,000',
-    estimatedTime: '4-8 weeks',
+    idealFor: [
+      "Complex applications",
+      "Enterprise solutions",
+      "Product companies",
+    ],
+    startingPrice: "₹15,000",
+    estimatedTime: "4-8 weeks",
     rating: 4.8,
   },
   {
-    id: 'app',
+    id: "app",
     icon: Smartphone,
-    title: 'Mobile App Development (Android & iOS)',
-    shortDesc: 'High-performance mobile apps for iOS & Android.',
+    title: "Mobile App Development (Android & iOS)",
+    shortDesc: "High-performance mobile apps for iOS & Android.",
     fullDesc:
-      'From idea to app store, we develop mobile applications that are reliable, intuitive, and built to scale across all platforms.',
+      "From idea to app store, we develop mobile applications that are reliable, intuitive, and built to scale across all platforms.",
     includes: [
-      'Android & iOS apps',
-      'React Native / Cross-platform',
-      'Clean UI & smooth UX',
-      'API integration',
-      'App store deployment',
-      'Post-launch support',
+      "Android & iOS apps",
+      "React Native / Cross-platform",
+      "Clean UI & smooth UX",
+      "API integration",
+      "App store deployment",
+      "Post-launch support",
     ],
-    idealFor: ['Startups', 'Service-based apps', 'Consumer products'],
-    startingPrice: '₹35,000',
-    estimatedTime: '4-8 weeks',
+    idealFor: ["Startups", "Service-based apps", "Consumer products"],
+    startingPrice: "₹35,000",
+    estimatedTime: "4-8 weeks",
     rating: 4.8,
   },
   {
-    id: 'api',
+    id: "api",
     icon: Lock,
-    title: 'API Development & Integration',
-    shortDesc: 'Secure and scalable APIs for integrations.',
+    title: "API Development & Integration",
+    shortDesc: "Secure and scalable APIs for integrations.",
     fullDesc:
-      'We build well-documented REST and GraphQL APIs that power modern applications and enable seamless third-party integrations.',
+      "We build well-documented REST and GraphQL APIs that power modern applications and enable seamless third-party integrations.",
     includes: [
-      'REST & GraphQL APIs',
-      'Authentication & authorization',
-      'API documentation',
-      'Third-party integrations',
-      'Testing & versioning',
-      'Rate limiting & security',
+      "REST & GraphQL APIs",
+      "Authentication & authorization",
+      "API documentation",
+      "Third-party integrations",
+      "Testing & versioning",
+      "Rate limiting & security",
     ],
-    idealFor: ['Web apps', 'Mobile apps', 'Microservices', 'Integrations'],
-    startingPrice: '₹3,500',
-    estimatedTime: '2-4 weeks',
+    idealFor: ["Web apps", "Mobile apps", "Microservices", "Integrations"],
+    startingPrice: "₹3,500",
+    estimatedTime: "2-4 weeks",
     rating: 4.7,
   },
   {
-    id: 'cloud',
+    id: "cloud",
     icon: Cloud,
-    title: 'Cloud Infrastructure Setup (AWS-Focused)',
-    shortDesc: 'Scalable and secure cloud solutions.',
+    title: "Cloud Infrastructure Setup (AWS-Focused)",
+    shortDesc: "Scalable and secure cloud solutions.",
     fullDesc:
-      'We design and manage cloud infrastructure that supports performance, security, and future growth with AWS best practices.',
+      "We design and manage cloud infrastructure that supports performance, security, and future growth with AWS best practices.",
     includes: [
-      'AWS-focused architecture',
-      'Server & database setup',
-      'Auto-scaling & load balancing',
-      'Security best practices',
-      'Cost optimization',
-      'Monitoring & backups',
+      "AWS-focused architecture",
+      "Server & database setup",
+      "Auto-scaling & load balancing",
+      "Security best practices",
+      "Cost optimization",
+      "Monitoring & backups",
     ],
-    idealFor: ['SaaS', 'High-traffic platforms', 'Enterprise applications'],
-    startingPrice: '₹3,000',
-    estimatedTime: '1-2 weeks',
+    idealFor: ["SaaS", "High-traffic platforms", "Enterprise applications"],
+    startingPrice: "₹3,000",
+    estimatedTime: "1-2 weeks",
     rating: 4.9,
   },
   {
-    id: 'devops',
+    id: "devops",
     icon: Cog,
-    title: 'DevOps & CI/CD Automation',
-    shortDesc: 'Automation, CI/CD, and infrastructure management.',
+    title: "DevOps & CI/CD Automation",
+    shortDesc: "Automation, CI/CD, and infrastructure management.",
     fullDesc:
-      'We streamline development and deployment using modern DevOps workflows, ensuring reliable and efficient software delivery.',
+      "We streamline development and deployment using modern DevOps workflows, ensuring reliable and efficient software delivery.",
     includes: [
-      'CI/CD pipelines',
-      'Docker & containerization',
-      'Server monitoring',
-      'Automated deployments',
-      'Environment management',
-      'Infrastructure as code',
+      "CI/CD pipelines",
+      "Docker & containerization",
+      "Server monitoring",
+      "Automated deployments",
+      "Environment management",
+      "Infrastructure as code",
     ],
-    idealFor: ['Production apps', 'Growing teams', 'Enterprise deployments'],
-    startingPrice: '₹4,000',
-    estimatedTime: '2-3 weeks',
+    idealFor: ["Production apps", "Growing teams", "Enterprise deployments"],
+    startingPrice: "₹4,000",
+    estimatedTime: "2-3 weeks",
     rating: 4.8,
   },
   {
-    id: 'backend',
+    id: "backend",
     icon: Server,
-    title: 'Backend Architecture & Optimization',
-    shortDesc: 'Robust and scalable backend systems.',
+    title: "Backend Architecture & Optimization",
+    shortDesc: "Robust and scalable backend systems.",
     fullDesc:
-      'We design and optimize backend architectures that are performant, secure, and maintainable for long-term success.',
+      "We design and optimize backend architectures that are performant, secure, and maintainable for long-term success.",
     includes: [
-      'Microservices architecture',
-      'Performance optimization',
-      'Caching strategies',
-      'Load balancing',
-      'Error handling & logging',
-      'Code refactoring',
+      "Microservices architecture",
+      "Performance optimization",
+      "Caching strategies",
+      "Load balancing",
+      "Error handling & logging",
+      "Code refactoring",
     ],
-    idealFor: ['High-traffic apps', 'Complex systems', 'Legacy modernization'],
-    startingPrice: '₹4,500',
-    estimatedTime: '3-6 weeks',
+    idealFor: ["High-traffic apps", "Complex systems", "Legacy modernization"],
+    startingPrice: "₹4,500",
+    estimatedTime: "3-6 weeks",
     rating: 4.8,
   },
   {
-    id: 'database',
+    id: "database",
     icon: Database,
-    title: 'Database Design & Performance Tuning',
-    shortDesc: 'Optimized database solutions for performance.',
+    title: "Database Design & Performance Tuning",
+    shortDesc: "Optimized database solutions for performance.",
     fullDesc:
-      'We design, implement, and optimize databases for maximum performance, scalability, and data integrity.',
+      "We design, implement, and optimize databases for maximum performance, scalability, and data integrity.",
     includes: [
-      'Database schema design',
-      'Query optimization',
-      'Indexing strategies',
-      'Data migration',
-      'Backup & recovery',
-      'Performance monitoring',
+      "Database schema design",
+      "Query optimization",
+      "Indexing strategies",
+      "Data migration",
+      "Backup & recovery",
+      "Performance monitoring",
     ],
-    idealFor: ['Data-heavy applications', 'Analytics platforms', 'E-commerce'],
-    startingPrice: '₹2,000',
-    estimatedTime: '1-3 weeks',
+    idealFor: ["Data-heavy applications", "Analytics platforms", "E-commerce"],
+    startingPrice: "₹2,000",
+    estimatedTime: "1-3 weeks",
     rating: 4.7,
   },
   {
-    id: 'uiux',
+    id: "uiux",
     icon: Palette,
-    title: 'UI/UX Design & Product Experience',
-    shortDesc: 'User-centric, conversion-focused design.',
+    title: "UI/UX Design & Product Experience",
+    shortDesc: "User-centric, conversion-focused design.",
     fullDesc:
-      'We design intuitive interfaces that enhance user experience and engagement, focusing on conversion and user satisfaction.',
+      "We design intuitive interfaces that enhance user experience and engagement, focusing on conversion and user satisfaction.",
     includes: [
-      'Wireframes & prototypes',
-      'Modern UI design',
-      'UX research',
-      'Design systems',
-      'Developer-ready assets',
-      'Usability testing',
+      "Wireframes & prototypes",
+      "Modern UI design",
+      "UX research",
+      "Design systems",
+      "Developer-ready assets",
+      "Usability testing",
     ],
-    idealFor: ['Web apps', 'Mobile apps', 'Brand revamps', 'Product redesigns'],
-    startingPrice: '₹1,500',
-    estimatedTime: '1-3 weeks',
+    idealFor: ["Web apps", "Mobile apps", "Brand revamps", "Product redesigns"],
+    startingPrice: "₹1,500",
+    estimatedTime: "1-3 weeks",
     rating: 4.7,
   },
   {
-    id: 'landing',
+    id: "landing",
     icon: Globe,
-    title: 'Landing Page Development & Conversion Optimization',
-    shortDesc: 'High-converting landing pages and marketing sites.',
+    title: "Landing Page Development & Conversion Optimization",
+    shortDesc: "High-converting landing pages and marketing sites.",
     fullDesc:
-      'We create landing pages that convert visitors into customers, with A/B testing, analytics, and optimization strategies.',
+      "We create landing pages that convert visitors into customers, with A/B testing, analytics, and optimization strategies.",
     includes: [
-      'Conversion-focused design',
-      'A/B testing setup',
-      'Analytics integration',
-      'Performance optimization',
-      'Mobile optimization',
-      'SEO optimization',
+      "Conversion-focused design",
+      "A/B testing setup",
+      "Analytics integration",
+      "Performance optimization",
+      "Mobile optimization",
+      "SEO optimization",
     ],
-    idealFor: ['Marketing campaigns', 'Product launches', 'Lead generation'],
-    startingPrice: '₹1,000',
-    estimatedTime: '1-2 weeks',
+    idealFor: ["Marketing campaigns", "Product launches", "Lead generation"],
+    startingPrice: "₹1,000",
+    estimatedTime: "1-2 weeks",
     rating: 4.6,
   },
   {
-    id: 'security',
+    id: "security",
     icon: Shield,
-    title: 'Web Application Security & Hardening',
-    shortDesc: 'Secure applications protected against threats.',
+    title: "Web Application Security & Hardening",
+    shortDesc: "Secure applications protected against threats.",
     fullDesc:
-      'We implement comprehensive security measures to protect your applications from vulnerabilities and cyber threats.',
+      "We implement comprehensive security measures to protect your applications from vulnerabilities and cyber threats.",
     includes: [
-      'Security audits',
-      'Vulnerability assessment',
-      'OWASP compliance',
-      'Authentication hardening',
-      'Data encryption',
-      'Security monitoring',
+      "Security audits",
+      "Vulnerability assessment",
+      "OWASP compliance",
+      "Authentication hardening",
+      "Data encryption",
+      "Security monitoring",
     ],
-    idealFor: ['Financial apps', 'Healthcare', 'E-commerce', 'Enterprise software'],
-    startingPrice: '₹3,500',
-    estimatedTime: '2-4 weeks',
+    idealFor: [
+      "Financial apps",
+      "Healthcare",
+      "E-commerce",
+      "Enterprise software",
+    ],
+    startingPrice: "₹3,500",
+    estimatedTime: "2-4 weeks",
     rating: 4.9,
   },
   {
-    id: 'performance',
+    id: "performance",
     icon: Zap,
-    title: 'Performance Optimization & Speed Audits',
-    shortDesc: 'Fast, optimized applications for better user experience.',
+    title: "Performance Optimization & Speed Audits",
+    shortDesc: "Fast, optimized applications for better user experience.",
     fullDesc:
-      'We optimize application performance to deliver lightning-fast experiences, improving user satisfaction and conversion rates.',
+      "We optimize application performance to deliver lightning-fast experiences, improving user satisfaction and conversion rates.",
     includes: [
-      'Performance audits',
-      'Code optimization',
-      'Image optimization',
-      'Caching implementation',
-      'CDN setup',
-      'Core Web Vitals optimization',
+      "Performance audits",
+      "Code optimization",
+      "Image optimization",
+      "Caching implementation",
+      "CDN setup",
+      "Core Web Vitals optimization",
     ],
-    idealFor: ['E-commerce', 'Media sites', 'SaaS products', 'High-traffic apps'],
-    startingPrice: '₹2,500',
-    estimatedTime: '1-2 weeks',
+    idealFor: [
+      "E-commerce",
+      "Media sites",
+      "SaaS products",
+      "High-traffic apps",
+    ],
+    startingPrice: "₹2,500",
+    estimatedTime: "1-2 weeks",
     rating: 4.8,
   },
   {
-    id: 'testing',
+    id: "testing",
     icon: CheckCircle,
-    title: 'Testing, QA & Bug Fixing',
-    shortDesc: 'Comprehensive testing and quality assurance.',
+    title: "Testing, QA & Bug Fixing",
+    shortDesc: "Comprehensive testing and quality assurance.",
     fullDesc:
-      'We ensure your applications are thoroughly tested, bug-free, and ready for production with comprehensive QA processes.',
+      "We ensure your applications are thoroughly tested, bug-free, and ready for production with comprehensive QA processes.",
     includes: [
-      'Unit & integration testing',
-      'End-to-end testing',
-      'Manual QA testing',
-      'Bug fixing & debugging',
-      'Test automation',
-      'Quality documentation',
+      "Unit & integration testing",
+      "End-to-end testing",
+      "Manual QA testing",
+      "Bug fixing & debugging",
+      "Test automation",
+      "Quality documentation",
     ],
-    idealFor: ['Production releases', 'Complex applications', 'Enterprise software'],
-    startingPrice: '₹2,000',
-    estimatedTime: '1-3 weeks',
+    idealFor: [
+      "Production releases",
+      "Complex applications",
+      "Enterprise software",
+    ],
+    startingPrice: "₹2,000",
+    estimatedTime: "1-3 weeks",
     rating: 4.7,
   },
   {
-    id: 'maintenance',
+    id: "maintenance",
     icon: Wrench,
-    title: 'Website Maintenance & Technical Support',
-    shortDesc: 'Ongoing support and maintenance services.',
+    title: "Website Maintenance & Technical Support",
+    shortDesc: "Ongoing support and maintenance services.",
     fullDesc:
-      'We provide continuous maintenance and technical support to keep your applications running smoothly and up-to-date.',
+      "We provide continuous maintenance and technical support to keep your applications running smoothly and up-to-date.",
     includes: [
-      'Regular updates & patches',
-      'Security monitoring',
-      'Performance monitoring',
-      'Bug fixes & support',
-      'Feature enhancements',
-      '24/7 technical support',
+      "Regular updates & patches",
+      "Security monitoring",
+      "Performance monitoring",
+      "Bug fixes & support",
+      "Feature enhancements",
+      "24/7 technical support",
     ],
-    idealFor: ['Established businesses', 'Long-term partnerships', 'Critical applications'],
-    startingPrice: '₹1,500/month',
-    estimatedTime: 'Ongoing',
+    idealFor: [
+      "Established businesses",
+      "Long-term partnerships",
+      "Critical applications",
+    ],
+    startingPrice: "₹1,500/month",
+    estimatedTime: "Ongoing",
     rating: 4.8,
   },
 ];
@@ -326,26 +348,30 @@ const services: Service[] = [
 export default function BookServicePage() {
   const params = useParams();
   const serviceId = params.serviceId as string;
-  const service = services.find(s => s.id === serviceId);
+  const service = services.find((s) => s.id === serviceId);
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: '',
-    budget: '',
-    timeline: '',
-    preferredContact: 'email',
-    additionalInfo: '',
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: "",
+    budget: "",
+    timeline: "",
+    preferredContact: "email",
+    additionalInfo: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -354,10 +380,10 @@ export default function BookServicePage() {
     const res = await fetch("http://localhost:5000/api/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ 
-        name: formData.name, 
-        email: formData.email, 
-        phone: formData.phone, 
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
         company: formData.company,
         message: formData.message,
         budget: formData.budget,
@@ -365,8 +391,8 @@ export default function BookServicePage() {
         preferredContact: formData.preferredContact,
         additionalInfo: formData.additionalInfo,
         service: service?.title || serviceId,
-        source: `book-service-${serviceId}` 
-      })
+        source: `book-service-${serviceId}`,
+      }),
     });
 
     if (res.ok) alert("Message sent!");
@@ -379,8 +405,13 @@ export default function BookServicePage() {
         <Header />
         <div className="pt-24 pb-20 text-center">
           <h1 className="text-4xl font-bold">Service Not Found</h1>
-          <p className="mt-4 text-foreground/70">The service you're looking for doesn't exist.</p>
-          <a href="/services" className="mt-8 inline-block gold-btn px-6 py-3 rounded-md">
+          <p className="mt-4 text-foreground/70">
+            The service you're looking for doesn't exist.
+          </p>
+          <a
+            href="/services"
+            className="mt-8 inline-block gold-btn px-6 py-3 rounded-md"
+          >
             View All Services
           </a>
         </div>
@@ -402,13 +433,20 @@ export default function BookServicePage() {
             </div>
             <h1 className="text-3xl font-bold mb-4">Thank You!</h1>
             <p className="text-foreground/70 mb-8">
-              We've received your booking request and will contact you within 24 hours to discuss your project.
+              We've received your booking request and will contact you within 24
+              hours to discuss your project.
             </p>
             <div className="space-y-3">
-              <a href="/services" className="block gold-btn px-6 py-3 rounded-md">
+              <a
+                href="/services"
+                className="block gold-btn px-6 py-3 rounded-md"
+              >
                 View More Services
               </a>
-              <a href="/" className="block border border-accent px-6 py-3 rounded-md text-accent">
+              <a
+                href="/"
+                className="block border border-accent px-6 py-3 rounded-md text-accent"
+              >
                 Back to Home
               </a>
             </div>
@@ -425,7 +463,10 @@ export default function BookServicePage() {
 
       {/* Hero */}
       <section className="pt-24 pb-12 text-center">
-        <a href="/services" className="inline-flex items-center gap-2 text-accent mb-4 hover:text-accent/80 transition-colors">
+        <a
+          href="/services"
+          className="inline-flex items-center gap-2 text-accent mb-4 hover:text-accent/80 transition-colors"
+        >
           <ArrowLeft size={16} />
           Back to Services
         </a>
@@ -451,7 +492,9 @@ export default function BookServicePage() {
             </div>
           </div>
         </div>
-        <p className="text-foreground/70 max-w-2xl mx-auto">{service.fullDesc}</p>
+        <p className="text-foreground/70 max-w-2xl mx-auto">
+          {service.fullDesc}
+        </p>
       </section>
 
       <div className="max-w-6xl mx-auto px-4 pb-24 grid lg:grid-cols-2 gap-12">
@@ -459,7 +502,7 @@ export default function BookServicePage() {
         <div>
           <h2 className="text-2xl font-semibold mb-6">What's Included</h2>
           <div className="space-y-3 mb-8">
-            {service.includes.map(item => (
+            {service.includes.map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <CheckCircle size={18} className="text-accent flex-shrink-0" />
                 <span>{item}</span>
@@ -469,17 +512,23 @@ export default function BookServicePage() {
 
           <h3 className="text-xl font-semibold mb-4">Ideal For</h3>
           <div className="flex flex-wrap gap-2 mb-8">
-            {service.idealFor.map(tag => (
-              <span key={tag} className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">
+            {service.idealFor.map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm"
+              >
                 {tag}
               </span>
             ))}
           </div>
 
           <div className="bg-accent/5 p-6 rounded-lg">
-            <h3 className="text-lg font-semibold mb-2">Ready to Get Started?</h3>
+            <h3 className="text-lg font-semibold mb-2">
+              Ready to Get Started?
+            </h3>
             <p className="text-sm text-foreground/70 mb-4">
-              Fill out the form to discuss your project requirements and get a custom quote.
+              Fill out the form to discuss your project requirements and get a
+              custom quote.
             </p>
             <a
               href="https://wa.me/7355474484"
@@ -497,7 +546,10 @@ export default function BookServicePage() {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2"
+                >
                   Full Name *
                 </label>
                 <input
@@ -512,7 +564,10 @@ export default function BookServicePage() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                >
                   Email Address *
                 </label>
                 <input
@@ -530,7 +585,10 @@ export default function BookServicePage() {
 
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium mb-2"
+                >
                   Phone Number
                 </label>
                 <input
@@ -544,7 +602,10 @@ export default function BookServicePage() {
                 />
               </div>
               <div>
-                <label htmlFor="company" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="company"
+                  className="block text-sm font-medium mb-2"
+                >
                   Company Name
                 </label>
                 <input
@@ -560,7 +621,10 @@ export default function BookServicePage() {
             </div>
 
             <div>
-              <label htmlFor="projectDetails" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="projectDetails"
+                className="block text-sm font-medium mb-2"
+              >
                 Project Details *
               </label>
               <textarea
@@ -577,7 +641,10 @@ export default function BookServicePage() {
 
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="budget" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="budget"
+                  className="block text-sm font-medium mb-2"
+                >
                   Budget Range
                 </label>
                 <select
@@ -596,7 +663,10 @@ export default function BookServicePage() {
                 </select>
               </div>
               <div>
-                <label htmlFor="timeline" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="timeline"
+                  className="block text-sm font-medium mb-2"
+                >
                   Preferred Timeline
                 </label>
                 <select
@@ -617,7 +687,10 @@ export default function BookServicePage() {
             </div>
 
             <div>
-              <label htmlFor="preferredContact" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="preferredContact"
+                className="block text-sm font-medium mb-2"
+              >
                 Preferred Contact Method
               </label>
               <select
@@ -634,7 +707,10 @@ export default function BookServicePage() {
             </div>
 
             <div>
-              <label htmlFor="additionalInfo" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="additionalInfo"
+                className="block text-sm font-medium mb-2"
+              >
                 Additional Information
               </label>
               <textarea
@@ -669,7 +745,8 @@ export default function BookServicePage() {
 
           <div className="mt-8 text-center">
             <p className="text-sm text-foreground/70 mb-4">
-              Prefer to chat directly? We're available on WhatsApp for quick discussions.
+              Prefer to chat directly? We're available on WhatsApp for quick
+              discussions.
             </p>
             <a
               href="https://wa.me/7355474484"

@@ -1,21 +1,20 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import Image from 'next/image';
-<Link href="/services">Services</Link>
-
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
+<Link href="/services">Services</Link>;
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/services' },
-    { label: 'Projects', href: '/projects' },
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact' },
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Projects", href: "/projects" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -78,7 +77,11 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/contact" className="gold-btn text-sm w-full block text-center" onClick={() => setIsOpen(false)}>
+            <Link
+              href="/contact"
+              className="gold-btn text-sm w-full block text-center"
+              onClick={() => setIsOpen(false)}
+            >
               Get Started
             </Link>
           </nav>

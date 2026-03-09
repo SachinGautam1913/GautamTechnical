@@ -1,82 +1,82 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #0B0B0B;
-  --foreground: #FFFFFF;
+  --background: #0b0b0b;
+  --foreground: #ffffff;
   --card: #1a1a1a;
-  --card-foreground: #FFFFFF;
+  --card-foreground: #ffffff;
   --popover: #1a1a1a;
-  --popover-foreground: #FFFFFF;
-  --primary: #0B0B0B;
-  --primary-foreground: #FFFFFF;
+  --popover-foreground: #ffffff;
+  --primary: #0b0b0b;
+  --primary-foreground: #ffffff;
   --secondary: #1a1a1a;
-  --secondary-foreground: #FFFFFF;
+  --secondary-foreground: #ffffff;
   --muted: #404040;
   --muted-foreground: #9ca3af;
-  --accent: #D4AF37;
-  --accent-foreground: #0B0B0B;
+  --accent: #d4af37;
+  --accent-foreground: #0b0b0b;
   --destructive: #ef4444;
   --destructive-foreground: #fca5a5;
   --border: #2a2a2a;
   --input: #1a1a1a;
-  --ring: #D4AF37;
-  --chart-1: #D4AF37;
+  --ring: #d4af37;
+  --chart-1: #d4af37;
   --chart-2: #ec4899;
   --chart-3: #8b5cf6;
   --chart-4: #f59e0b;
   --chart-5: #10b981;
   --radius: 0.5rem;
   --sidebar: #1a1a1a;
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #0B0B0B;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #D4AF37;
-  --sidebar-accent-foreground: #0B0B0B;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #0b0b0b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d4af37;
+  --sidebar-accent-foreground: #0b0b0b;
   --sidebar-border: #2a2a2a;
-  --sidebar-ring: #D4AF37;
+  --sidebar-ring: #d4af37;
 }
 
 .dark {
-  --background: #0B0B0B;
-  --foreground: #FFFFFF;
+  --background: #0b0b0b;
+  --foreground: #ffffff;
   --card: #1a1a1a;
-  --card-foreground: #FFFFFF;
+  --card-foreground: #ffffff;
   --popover: #1a1a1a;
-  --popover-foreground: #FFFFFF;
-  --primary: #0B0B0B;
-  --primary-foreground: #FFFFFF;
+  --popover-foreground: #ffffff;
+  --primary: #0b0b0b;
+  --primary-foreground: #ffffff;
   --secondary: #1a1a1a;
-  --secondary-foreground: #FFFFFF;
+  --secondary-foreground: #ffffff;
   --muted: #404040;
   --muted-foreground: #9ca3af;
-  --accent: #D4AF37;
-  --accent-foreground: #0B0B0B;
+  --accent: #d4af37;
+  --accent-foreground: #0b0b0b;
   --destructive: #ff6b6b;
   --destructive-foreground: #ffe0e0;
   --border: #2a2a2a;
   --input: #1a1a1a;
-  --ring: #D4AF37;
-  --chart-1: #D4AF37;
+  --ring: #d4af37;
+  --chart-1: #d4af37;
   --chart-2: #ec4899;
   --chart-3: #8b5cf6;
   --chart-4: #f59e0b;
   --chart-5: #10b981;
   --sidebar: #1a1a1a;
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #0B0B0B;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #D4AF37;
-  --sidebar-accent-foreground: #0B0B0B;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #0b0b0b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d4af37;
+  --sidebar-accent-foreground: #0b0b0b;
   --sidebar-border: #2a2a2a;
-  --sidebar-ring: #D4AF37;
+  --sidebar-ring: #d4af37;
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -152,7 +152,7 @@
 }
 
 .gold-underline::after {
-  content: '';
+  content: "";
   @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
 }
 

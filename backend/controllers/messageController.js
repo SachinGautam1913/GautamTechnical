@@ -1,5 +1,5 @@
-const Message = require('../models/Message');
-const { sendEmailNotification } = require('../services/emailService');
+const Message = require("../models/Message");
+const { sendEmailNotification } = require("../services/emailService");
 
 const createMessage = async (req, res) => {
   try {
@@ -8,7 +8,7 @@ const createMessage = async (req, res) => {
     // Validate required fields
     if (!name || !email || !message || !source) {
       return res.status(400).json({
-        error: 'Missing required fields: name, email, message, source'
+        error: "Missing required fields: name, email, message, source",
       });
     }
 
@@ -19,7 +19,7 @@ const createMessage = async (req, res) => {
       phone: phone ? phone.trim() : undefined,
       subject: subject ? subject.trim() : undefined,
       message: message.trim(),
-      source: source.trim()
+      source: source.trim(),
     };
 
     // Try to save to database
@@ -28,7 +28,7 @@ const createMessage = async (req, res) => {
       const newMessage = new Message(messageData);
       savedMessage = await newMessage.save();
     } catch (dbError) {
-      console.error('Database save error:', dbError.message);
+      console.error("Database save error:", dbError.message);
       // Continue without database save for development
     }
 
@@ -37,16 +37,18 @@ const createMessage = async (req, res) => {
 
     res.status(201).json({
       success: true,
-      message: 'Message sent successfully',
-      data: savedMessage ? {
-        id: savedMessage._id,
-        createdAt: savedMessage.createdAt
-      } : null
+      message: "Message sent successfully",
+      data: savedMessage
+        ? {
+            id: savedMessage._id,
+            createdAt: savedMessage.createdAt,
+          }
+        : null,
     });
   } catch (error) {
-    console.error('Error creating message:', error);
+    console.error("Error creating message:", error);
     res.status(500).json({
-      error: 'Internal server error'
+      error: "Internal server error",
     });
   }
 };

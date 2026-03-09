@@ -1,8 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const connectDB = require('./config/database');
-const messageRoutes = require('./routes/messages');
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const connectDB = require("./config/database");
+const messageRoutes = require("./routes/messages");
 
 dotenv.config();
 
@@ -17,17 +17,17 @@ app.use(express.json());
 connectDB();
 
 // Routes
-app.use('/api/messages', messageRoutes);
+app.use("/api/messages", messageRoutes);
 
 // Health check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Server is running' });
+app.get("/api/health", (req, res) => {
+  res.json({ status: "OK", message: "Server is running" });
 });
 
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
+  res.status(500).json({ error: "Something went wrong!" });
 });
 
 app.listen(PORT, () => {

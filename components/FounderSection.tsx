@@ -1,18 +1,20 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function FounderSection() {
-  const phoneNumber = '+917355474484';
+  const phoneNumber = "+917355474484";
 
   const whatsappLink =
-    'https://wa.me/917355474484?text=Hi%20Sachin,%20I%20would%20like%20to%20schedule%20a%20call%20to%20discuss%20my%20project.';
+    "https://wa.me/917355474484?text=Hi%20Sachin,%20I%20would%20like%20to%20schedule%20a%20call%20to%20discuss%20my%20project.";
 
   return (
-    <section id="about" className="w-full py-16 sm:py-24 lg:py-32 bg-background">
+    <section
+      id="about"
+      className="w-full py-16 sm:py-24 lg:py-32 bg-background"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
           {/* Image */}
           <div className="relative h-96 sm:h-[500px] rounded-lg overflow-hidden gold-glow">
             <Image
@@ -49,7 +51,6 @@ export default function FounderSection() {
 
             {/* ✅ DUAL CTA */}
             <div className="flex flex-col sm:flex-row gap-4">
-
               {/* 📞 CALL */}
               <a
                 href={`tel:${phoneNumber}`}
@@ -93,10 +94,8 @@ export default function FounderSection() {
                   />
                 </svg>
               </a>
-
             </div>
           </div>
-
         </div>
       </div>
     </section>

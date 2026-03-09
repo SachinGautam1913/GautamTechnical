@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   Calendar,
   MessageCircle,
@@ -10,45 +10,51 @@ import {
   Star,
   Users,
   Award,
-} from 'lucide-react';
+} from "lucide-react";
 
 export default function BookServicePage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    projectDetails: '',
-    budget: '',
-    timeline: '',
-    preferredContact: 'email',
-    additionalInfo: '',
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    projectDetails: "",
+    budget: "",
+    timeline: "",
+    preferredContact: "email",
+    additionalInfo: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [submissionError, setSubmissionError] = useState<string>('');
+  const [submissionError, setSubmissionError] = useState<string>("");
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
-    if (!formData.name.trim()) newErrors.name = 'Full name is required';
-    if (!formData.email.trim()) newErrors.email = 'Email address is required';
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Please enter a valid email';
-    if (!formData.service) newErrors.service = 'Please select a service';
-    if (!formData.projectDetails.trim()) newErrors.projectDetails = 'Project details are required';
+    if (!formData.name.trim()) newErrors.name = "Full name is required";
+    if (!formData.email.trim()) newErrors.email = "Email address is required";
+    else if (!/\S+@\S+\.\S+/.test(formData.email))
+      newErrors.email = "Please enter a valid email";
+    if (!formData.service) newErrors.service = "Please select a service";
+    if (!formData.projectDetails.trim())
+      newErrors.projectDetails = "Project details are required";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -60,7 +66,7 @@ export default function BookServicePage() {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    setSubmissionError('');
+    setSubmissionError("");
 
     const message = `Service: ${formData.service}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline}\nPreferred Contact Method: ${formData.preferredContact}\nAdditional Info: ${formData.additionalInfo}`;
 
@@ -68,21 +74,23 @@ export default function BookServicePage() {
       const res = await fetch("http://localhost:5000/api/messages", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          name: formData.name, 
-          email: formData.email, 
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
           message,
-          source: "book-service" 
-        })
+          source: "book-service",
+        }),
       });
 
       if (res.ok) {
         setIsSubmitted(true);
       } else {
-        setSubmissionError('Failed to send message. Please try again.');
+        setSubmissionError("Failed to send message. Please try again.");
       }
     } catch (error) {
-      setSubmissionError('Network error. Please check your connection and try again.');
+      setSubmissionError(
+        "Network error. Please check your connection and try again.",
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -99,13 +107,20 @@ export default function BookServicePage() {
             </div>
             <h1 className="text-3xl font-bold mb-4">Thank You!</h1>
             <p className="text-foreground/70 mb-8">
-              We've received your booking request and will contact you within 24 hours to discuss your project.
+              We've received your booking request and will contact you within 24
+              hours to discuss your project.
             </p>
             <div className="space-y-3">
-              <a href="/services" className="block gold-btn px-6 py-3 rounded-md">
+              <a
+                href="/services"
+                className="block gold-btn px-6 py-3 rounded-md"
+              >
                 View Our Services
               </a>
-              <a href="/" className="block border border-accent px-6 py-3 rounded-md text-accent">
+              <a
+                href="/"
+                className="block border border-accent px-6 py-3 rounded-md text-accent"
+              >
                 Back to Home
               </a>
             </div>
@@ -126,7 +141,8 @@ export default function BookServicePage() {
           Book a <span className="text-accent">Service</span>
         </h1>
         <p className="mt-4 text-foreground/70 max-w-2xl mx-auto">
-          Ready to bring your project to life? Let's discuss your requirements and create something amazing together.
+          Ready to bring your project to life? Let's discuss your requirements
+          and create something amazing together.
         </p>
 
         {/* Stats */}
@@ -158,11 +174,16 @@ export default function BookServicePage() {
       <div className="max-w-4xl mx-auto px-4 pb-24">
         {/* Booking Form */}
         <div className="bg-card p-8 rounded-lg shadow-sm">
-          <h2 className="text-2xl font-semibold mb-6 text-center">Tell Us About Your Project</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center">
+            Tell Us About Your Project
+          </h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2"
+                >
                   Full Name *
                 </label>
                 <input
@@ -173,14 +194,19 @@ export default function BookServicePage() {
                   value={formData.name}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-3 border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent transition-colors ${
-                    errors.name ? 'border-red-500' : 'border-border'
+                    errors.name ? "border-red-500" : "border-border"
                   }`}
                   placeholder="Name"
                 />
-                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                )}
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                >
                   Email Address *
                 </label>
                 <input
@@ -191,17 +217,22 @@ export default function BookServicePage() {
                   value={formData.email}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-3 border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent transition-colors ${
-                    errors.email ? 'border-red-500' : 'border-border'
+                    errors.email ? "border-red-500" : "border-border"
                   }`}
                   placeholder="Mail"
                 />
-                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                )}
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium mb-2"
+                >
                   Phone Number
                 </label>
                 <input
@@ -215,7 +246,10 @@ export default function BookServicePage() {
                 />
               </div>
               <div>
-                <label htmlFor="company" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="company"
+                  className="block text-sm font-medium mb-2"
+                >
                   Company Name
                 </label>
                 <input
@@ -231,7 +265,10 @@ export default function BookServicePage() {
             </div>
 
             <div>
-              <label htmlFor="service" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="service"
+                className="block text-sm font-medium mb-2"
+              >
                 Service Interested In *
               </label>
               <select
@@ -241,7 +278,7 @@ export default function BookServicePage() {
                 value={formData.service}
                 onChange={handleInputChange}
                 className={`w-full px-4 py-3 border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent transition-colors ${
-                  errors.service ? 'border-red-500' : 'border-border'
+                  errors.service ? "border-red-500" : "border-border"
                 }`}
               >
                 <option value="">Select a service</option>
@@ -254,11 +291,16 @@ export default function BookServicePage() {
                 <option value="consultation">Consultation</option>
                 <option value="other">Other</option>
               </select>
-              {errors.service && <p className="text-red-500 text-sm mt-1">{errors.service}</p>}
+              {errors.service && (
+                <p className="text-red-500 text-sm mt-1">{errors.service}</p>
+              )}
             </div>
 
             <div>
-              <label htmlFor="projectDetails" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="projectDetails"
+                className="block text-sm font-medium mb-2"
+              >
                 Project Details *
               </label>
               <textarea
@@ -270,15 +312,22 @@ export default function BookServicePage() {
                 onChange={handleInputChange}
                 placeholder="Tell us about your project requirements, goals, and any specific features you need..."
                 className={`w-full px-4 py-3 border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent resize-none transition-colors ${
-                  errors.projectDetails ? 'border-red-500' : 'border-border'
+                  errors.projectDetails ? "border-red-500" : "border-border"
                 }`}
               />
-              {errors.projectDetails && <p className="text-red-500 text-sm mt-1">{errors.projectDetails}</p>}
+              {errors.projectDetails && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.projectDetails}
+                </p>
+              )}
             </div>
 
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="budget" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="budget"
+                  className="block text-sm font-medium mb-2"
+                >
                   Budget Range
                 </label>
                 <select
@@ -294,12 +343,15 @@ export default function BookServicePage() {
                   <option value="15k-50k">₹15,000 - ₹50,000</option>
                   <option value="50k-100k">₹50,000 - ₹1,00,000</option>
                   <option value="over-100k">Over ₹1,00,000</option>
-                  <option value="custom">Custom</option>   
+                  <option value="custom">Custom</option>
                   <option value="not-sure">Not sure yet</option>
                 </select>
               </div>
               <div>
-                <label htmlFor="timeline" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="timeline"
+                  className="block text-sm font-medium mb-2"
+                >
                   Preferred Timeline
                 </label>
                 <select
@@ -324,7 +376,10 @@ export default function BookServicePage() {
             </div>
 
             <div>
-              <label htmlFor="preferredContact" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="preferredContact"
+                className="block text-sm font-medium mb-2"
+              >
                 Preferred Contact Method
               </label>
               <select
@@ -341,7 +396,10 @@ export default function BookServicePage() {
             </div>
 
             <div>
-              <label htmlFor="additionalInfo" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="additionalInfo"
+                className="block text-sm font-medium mb-2"
+              >
                 Additional Information
               </label>
               <textarea
@@ -372,12 +430,15 @@ export default function BookServicePage() {
                 </>
               )}
             </button>
-            {submissionError && <p className="text-red-500 text-center mt-4">{submissionError}</p>}
+            {submissionError && (
+              <p className="text-red-500 text-center mt-4">{submissionError}</p>
+            )}
           </form>
 
           <div className="mt-8 text-center">
             <p className="text-sm text-foreground/70 mb-4">
-              Prefer to chat directly? We're available on WhatsApp for quick discussions.
+              Prefer to chat directly? We're available on WhatsApp for quick
+              discussions.
             </p>
             <a
               href="https://wa.me/7355474484"

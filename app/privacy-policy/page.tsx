@@ -253,4 +253,4 @@ export default function PrivacyPolicyPage() {
       <Footer />
     </main>
   );
-}
+} 

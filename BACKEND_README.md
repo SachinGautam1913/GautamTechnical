@@ -5,6 +5,7 @@ This project now includes a complete backend for handling form submissions with 
 ## Setup Instructions
 
 1. **Install dependencies:**
+
    ```bash
    npm install
    ```
@@ -20,10 +21,13 @@ This project now includes a complete backend for handling form submissions with 
      - `ADMIN_EMAIL`: Where notifications should be sent
 
 3. **Start the backend server:**
+
    ```bash
    npm run server
    ```
+
    Or for development with auto-restart:
+
    ```bash
    npm run server:dev
    ```
@@ -47,6 +51,7 @@ This project now includes a complete backend for handling form submissions with 
 ## Database Schema
 
 Messages are stored in MongoDB with the following fields:
+
 - name (required)
 - email (required)
 - phone
@@ -65,6 +70,7 @@ Messages are stored in MongoDB with the following fields:
 ## Email Notifications
 
 When a message is submitted:
+
 1. Data is saved to MongoDB
 2. Email notification is sent to ADMIN_EMAIL with all form details
 3. If email fails, the message is still saved (error is logged)
@@ -72,6 +78,7 @@ When a message is submitted:
 ## Production Deployment
 
 For production:
+
 1. Set up MongoDB Atlas cluster
 2. Configure SMTP email service
 3. Set environment variables

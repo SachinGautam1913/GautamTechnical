@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 const sendEmailNotification = async (messageData) => {
   try {
@@ -21,15 +21,15 @@ Source: ${messageData.source}
 
 Name: ${messageData.name}
 Email: ${messageData.email}
-Phone: ${messageData.phone || 'Not provided'}
-${messageData.subject ? `Subject: ${messageData.subject}` : ''}
-${messageData.company ? `Company: ${messageData.company}` : ''}
-${messageData.service ? `Service: ${messageData.service}` : ''}
-${messageData.projectDetails ? `Project Details: ${messageData.projectDetails}` : ''}
-${messageData.budget ? `Budget: ${messageData.budget}` : ''}
-${messageData.timeline ? `Timeline: ${messageData.timeline}` : ''}
-${messageData.preferredContact ? `Preferred Contact: ${messageData.preferredContact}` : ''}
-${messageData.additionalInfo ? `Additional Info: ${messageData.additionalInfo}` : ''}
+Phone: ${messageData.phone || "Not provided"}
+${messageData.subject ? `Subject: ${messageData.subject}` : ""}
+${messageData.company ? `Company: ${messageData.company}` : ""}
+${messageData.service ? `Service: ${messageData.service}` : ""}
+${messageData.projectDetails ? `Project Details: ${messageData.projectDetails}` : ""}
+${messageData.budget ? `Budget: ${messageData.budget}` : ""}
+${messageData.timeline ? `Timeline: ${messageData.timeline}` : ""}
+${messageData.preferredContact ? `Preferred Contact: ${messageData.preferredContact}` : ""}
+${messageData.additionalInfo ? `Additional Info: ${messageData.additionalInfo}` : ""}
 
 Message:
 ${messageData.message}
@@ -46,9 +46,9 @@ Received at: ${new Date().toLocaleString()}
     };
 
     await transporter.sendMail(mailOptions);
-    console.log('Email notification sent successfully');
+    console.log("Email notification sent successfully");
   } catch (error) {
-    console.error('Email sending failed:', error);
+    console.error("Email sending failed:", error);
     // Don't throw error - we still want to save the message even if email fails
   }
 };

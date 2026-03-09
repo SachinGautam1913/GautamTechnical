@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import Link from "next/link";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,10 +9,8 @@ export default function Footer() {
   return (
     <footer className="w-full bg-primary border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
         {/* Top */}
         <div className="py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-
           {/* Brand */}
           <div className="space-y-3">
             <div className="flex items-center gap-3">
@@ -87,15 +85,18 @@ export default function Footer() {
 
             <div className="flex gap-3 pt-2">
               {[
-                { icon: Twitter, href: 'https://twitter.com' },
-                { icon: Linkedin, href: 'https://linkedin.com/in/sachin-gautam11110112/' },
-                { icon: Github, href: 'https://github.com/SachinGautam1913' },
-                { icon: Mail, href: 'mailto:gautamtechnical439@gmail.com' },
+                { icon: Twitter, href: "https://twitter.com" },
+                {
+                  icon: Linkedin,
+                  href: "https://linkedin.com/in/sachin-gautam11110112/",
+                },
+                { icon: Github, href: "https://github.com/SachinGautam1913" },
+                { icon: Mail, href: "mailto:gautamtechnical439@gmail.com" },
               ].map(({ icon: Icon, href }, index) => (
                 <Link
                   key={index}
                   href={href}
-                  target={href.startsWith('http') ? '_blank' : undefined}
+                  target={href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full bg-white/10 border border-accent/30 flex items-center justify-center text-accent hover:bg-accent hover:text-primary transition"
                 >
@@ -104,7 +105,6 @@ export default function Footer() {
               ))}
             </div>
           </div>
-
         </div>
 
         {/* Bottom */}
@@ -114,7 +114,10 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-4 text-xs">
-            <Link href="/privacy-policy" className="text-white/60 hover:text-accent">
+            <Link
+              href="/privacy-policy"
+              className="text-white/60 hover:text-accent"
+            >
               Privacy
             </Link>
             <Link href="/terms" className="text-white/60 hover:text-accent">
@@ -122,7 +125,6 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-
       </div>
     </footer>
   );

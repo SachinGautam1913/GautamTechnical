@@ -1,25 +1,27 @@
-'use client';
+"use client";
 
-import React from "react"
+import React from "react";
 
-import { useState } from 'react';
-import { Mail, Phone, MapPin, MessageSquare } from 'lucide-react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useState } from "react";
+import { Mail, Phone, MapPin, MessageSquare } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -31,7 +33,13 @@ export default function ContactPage() {
     const res = await fetch("http://localhost:5000/api/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.phone, message: formData.message, source: "contact-form" })
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        source: "contact-form",
+      }),
     });
 
     if (res.ok) alert("Message sent!");
@@ -41,27 +49,27 @@ export default function ContactPage() {
   const contactMethods = [
     {
       icon: Mail,
-      label: 'Email',
-      value: 'gautamtechnical493@gmail.com',
-      href: 'mailto:gautamtechnical493@gmail.com',
+      label: "Email",
+      value: "gautamtechnical493@gmail.com",
+      href: "mailto:gautamtechnical493@gmail.com",
     },
     {
       icon: Phone,
-      label: 'Phone',
-      value: '+91 7355474484',
-      href: 'tel:+917355474484',
+      label: "Phone",
+      value: "+91 7355474484",
+      href: "tel:+917355474484",
     },
     {
       icon: MessageSquare,
-      label: 'WhatsApp',
-      value: 'Start a conversation',
-      href: 'https://wa.me/7355474484',
+      label: "WhatsApp",
+      value: "Start a conversation",
+      href: "https://wa.me/7355474484",
     },
     {
       icon: MapPin,
-      label: 'Location',
-      value: 'lucknow, Uttar Pradesh, India',
-      href: '#',
+      label: "Location",
+      value: "lucknow, Uttar Pradesh, India",
+      href: "#",
     },
   ];
 
@@ -73,12 +81,18 @@ export default function ContactPage() {
       <section className="pt-20 sm:pt-24 lg:pt-32 pb-12 sm:pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-4 text-center max-w-3xl mx-auto">
-            <p className="text-sm font-semibold text-accent uppercase tracking-widest">Get In Touch</p>
+            <p className="text-sm font-semibold text-accent uppercase tracking-widest">
+              Get In Touch
+            </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance">
-              Let's Build Something <span className="text-accent">Amazing Together</span>
+              Let's Build Something{" "}
+              <span className="text-accent">Amazing Together</span>
             </h1>
             <p className="text-lg text-foreground/70 text-balance">
-              Have a project in mind? Let’s turn it into something impactful. Connect with our team and discover how we can transform your vision into a scalable, high-performing digital solution            </p>
+              Have a project in mind? Let’s turn it into something impactful.
+              Connect with our team and discover how we can transform your
+              vision into a scalable, high-performing digital solution{" "}
+            </p>
           </div>
         </div>
       </section>
@@ -93,8 +107,12 @@ export default function ContactPage() {
                 <a
                   key={index}
                   href={method.href}
-                  target={method.href.startsWith('http') ? '_blank' : undefined}
-                  rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  target={method.href.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    method.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   className="service-card group"
                 >
                   <div className="space-y-4">
@@ -102,8 +120,12 @@ export default function ContactPage() {
                       <Icon className="gold-icon text-accent" size={24} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-foreground">{method.label}</h3>
-                      <p className="text-sm text-foreground/70 mt-2">{method.value}</p>
+                      <h3 className="text-lg font-semibold text-foreground">
+                        {method.label}
+                      </h3>
+                      <p className="text-sm text-foreground/70 mt-2">
+                        {method.value}
+                      </p>
                     </div>
                   </div>
                 </a>
@@ -119,24 +141,42 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             {/* Form */}
             <div className="bg-card border border-border rounded-lg p-8 sm:p-10">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">Send us a Message</h2>
-              
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">
+                Send us a Message
+              </h2>
+
               {submitted ? (
                 <div className="flex items-center justify-center h-64">
                   <div className="text-center space-y-4">
                     <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
-                      <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <svg
+                        className="w-8 h-8 text-accent"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
                     </div>
-                    <p className="text-foreground font-medium">Thank you for your message!</p>
-                    <p className="text-foreground/70 text-sm">We'll get back to you within 2 business days.</p>
+                    <p className="text-foreground font-medium">
+                      Thank you for your message!
+                    </p>
+                    <p className="text-foreground/70 text-sm">
+                      We'll get back to you within 2 business days.
+                    </p>
                   </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Full Name</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Full Name
+                    </label>
                     <input
                       type="text"
                       name="name"
@@ -149,7 +189,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Email Address</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Email Address
+                    </label>
                     <input
                       type="email"
                       name="email"
@@ -162,7 +204,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Phone Number
+                    </label>
                     <input
                       type="tel"
                       name="phone"
@@ -174,7 +218,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Message</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Message
+                    </label>
                     <textarea
                       name="message"
                       value={formData.message}
@@ -186,10 +232,7 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="gold-btn w-full"
-                  >
+                  <button type="submit" className="gold-btn w-full">
                     Send Message
                   </button>
                 </form>
@@ -199,49 +242,62 @@ export default function ContactPage() {
             {/* Info */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">Why Choose Us?</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  Why Choose Us?
+                </h3>
                 <ul className="space-y-4">
                   <li className="flex gap-3">
                     <span className="text-accent font-bold">✓</span>
-                    <span className="text-foreground/80">Quick response time - we get back to you within 24 hours</span>
+                    <span className="text-foreground/80">
+                      Quick response time - we get back to you within 24 hours
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-accent font-bold">✓</span>
-                    <span className="text-foreground/80">Experienced team with 2.5+ years in the industry</span>
+                    <span className="text-foreground/80">
+                      Experienced team with 2.5+ years in the industry
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-accent font-bold">✓</span>
-                    <span className="text-foreground/80">Transparent pricing and no hidden costs</span>
+                    <span className="text-foreground/80">
+                      Transparent pricing and no hidden costs
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-accent font-bold">✓</span>
-                    <span className="text-foreground/80">Dedicated support throughout the project</span>
+                    <span className="text-foreground/80">
+                      Dedicated support throughout the project
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-accent font-bold">✓</span>
-                    <span className="text-foreground/80">Portfolio of 25+ successful projects</span>
+                    <span className="text-foreground/80">
+                      Portfolio of 25+ successful projects
+                    </span>
                   </li>
                 </ul>
               </div>
 
-             <div className="p-6 bg-card border border-accent/30 rounded-lg">
-  <h4 className="font-semibold text-foreground mb-2">
-    Need Immediate Assistance?
-  </h4>
+              <div className="p-6 bg-card border border-accent/30 rounded-lg">
+                <h4 className="font-semibold text-foreground mb-2">
+                  Need Immediate Assistance?
+                </h4>
 
-  <p className="text-foreground/70 text-sm mb-4">
-    Chat with our support team on WhatsApp for instant help with your inquiry.
-  </p>
+                <p className="text-foreground/70 text-sm mb-4">
+                  Chat with our support team on WhatsApp for instant help with
+                  your inquiry.
+                </p>
 
-  <a
-    href="https://wa.me/7355474484?text=Hi%20I%20want%20to%20know%20more%20about%20your%20company%20and%20I%20am%20interested%20in%20building%20a%20project."
-    target="_blank"
-    rel="noopener noreferrer"
-    className="gold-btn text-sm inline-block"
-  >
-    Open WhatsApp
-  </a>
-</div>
+                <a
+                  href="https://wa.me/7355474484?text=Hi%20I%20want%20to%20know%20more%20about%20your%20company%20and%20I%20am%20interested%20in%20building%20a%20project."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gold-btn text-sm inline-block"
+                >
+                  Open WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>

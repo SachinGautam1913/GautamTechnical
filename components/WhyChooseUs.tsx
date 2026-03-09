@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { Check } from 'lucide-react';
+import { Check } from "lucide-react";
 
 const benefits = [
   "Founder-driven strategy & execution backed by 7+ years of real-world experience",
@@ -21,7 +21,6 @@ export default function WhyChooseUs() {
     <section id="why" className="w-full py-16 sm:py-24 lg:py-32 bg-secondary">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
           {/* LEFT */}
           <div className="space-y-8">
             <div className="space-y-4">
@@ -88,7 +87,6 @@ export default function WhyChooseUs() {
               <p className="font-semibold">Support</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
