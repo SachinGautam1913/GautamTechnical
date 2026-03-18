@@ -1,20 +1,158 @@
-# 🚀 GautamTechnical
+# GT Project - Refactored Frontend & Backend
 
-### _Premium Digital Solutions • Modern Tech Agency_
+This project has been refactored into separate frontend (Next.js) and backend (Node.js + Express + TypeScript) applications.
 
-![Status](https://img.shields.io/badge/Status-Active-success)
-![Founded](https://img.shields.io/badge/Founded-2025-blue)
-![Clients](https://img.shields.io/badge/Clients-40%2B-brightgreen)
-![Tech](https://img.shields.io/badge/Tech-Modern_Stack-purple)
+## Project Structure
 
----
+```
+GT/
+├── frontend/                    # Next.js Frontend Application
+│   ├── app/                    # Next.js App Router
+│   ├── components/             # React Components
+│   ├── lib/                    # Utilities and API functions
+│   ├── public/                 # Static assets
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── next.config.mjs
+│   ├── .env.example
+│   └── .env.local             # Local environment variables
+│
+├── backend/                     # Express.js Backend Application
+│   ├── src/
+│   │   ├── server.ts          # Express server entry point
+│   │   ├── config/            # Database and config files
+│   │   ├── models/            # Mongoose models (Review, etc.)
+│   │   ├── routes/            # API routes
+│   │   ├── controllers/       # Route controllers
+│   │   └── types/             # TypeScript interfaces
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── .env.example
+│   └── dist/                  # Compiled JavaScript output
+│
+└── README.md                   # This file
+```
 
-## 👋 About Us
+## Getting Started
 
-**GautamTechnical** is a modern tech agency focused on building **high-quality, scalable, and future-ready digital solutions** for startups and growing businesses.
+### Prerequisites
+- Node.js 18+ and npm/pnpm
+- MongoDB Atlas account or local MongoDB instance
 
-We help brands transform ideas into **reliable, performance-driven products** through clean design, solid engineering, and a strong focus on real business impact.  
-No unnecessary fluff — just tech that works and scales.
+### 1. Install Dependencies
+
+#### Frontend
+```bash
+cd frontend
+npm install
+# or
+pnpm install
+```
+
+#### Backend
+```bash
+cd backend
+npm install
+# or
+pnpm install
+```
+
+### 2. Environment Configuration
+
+#### Frontend Setup
+```bash
+cd frontend
+cp .env.example .env.local
+```
+
+Edit `frontend/.env.local`:
+```
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
+NODE_ENV=development
+```
+
+#### Backend Setup
+```bash
+cd backend
+cp .env.example .env
+```
+
+Edit `backend/.env`:
+```
+PORT=5000
+NODE_ENV=development
+MONGODB_URI=mongodb://localhost:27017/gt-project
+# OR for MongoDB Atlas:
+# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/gt-project
+
+FRONTEND_URL=http://localhost:3000
+```
+
+### 3. Start Both Applications
+
+#### Terminal 1 - Start Backend
+```bash
+cd backend
+npm run dev
+```
+
+The backend will run on `http://localhost:5000`
+
+#### Terminal 2 - Start Frontend
+```bash
+cd frontend
+npm run dev
+```
+
+The frontend will run on `http://localhost:3000`
+
+## Available Scripts
+
+### Frontend (Next.js)
+```bash
+npm run dev      # Start development server on port 3000
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
+
+### Backend (Express + TypeScript)
+```bash
+npm run dev      # Start with ts-node-dev (auto-restart on changes)
+npm run build    # Compile TypeScript to JavaScript
+npm run start    # Run compiled JavaScript
+npm run lint     # Run ESLint
+```
+
+## API Endpoints
+
+### Reviews API
+- `POST /api/reviews` - Create a new review
+- `GET /api/reviews` - Get all reviews
+- `GET /api/reviews/:id` - Get a review by ID
+- `DELETE /api/reviews/:id` - Delete a review
+
+### Health Check
+- `GET /api/health` - Backend health check
+
+## API Examples
+
+### Submit a Review
+```bash
+curl -X POST http://localhost:5000/api/reviews \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "role": "CEO",
+    "rating": 5,
+    "review": "Excellent service and support!"
+  }'
+```
+
+### Get All Reviews
+```bash
+curl http://localhost:5000/api/reviews
+```
 
 ---
 

@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const messageRoutes = require("./routes/messageRoutes");
+const reviewRoutes = require("./routes/reviewRoutes");
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/messages", messageRoutes);
+app.use("/api/reviews", reviewRoutes);
 
 // Health check
 app.get("/api/health", (req, res) => {
