@@ -117,7 +117,7 @@ This document verifies that all components of the refactored GT Project are in p
 ```
 PORT=5000
 NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/gt-project
+MONGO_URI=mongodb://localhost:27017/gt-project
 FRONTEND_URL=http://localhost:3000
 ```
 

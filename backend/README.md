@@ -24,7 +24,7 @@ Create a `.env` file in the backend directory:
 ```
 PORT=5000
 NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/gt-project
+MONGO_URI=mongodb://localhost:27017/gt-project
 FRONTEND_URL=http://localhost:3000
 ```
 
@@ -32,19 +32,19 @@ FRONTEND_URL=http://localhost:3000
 
 - `PORT` - Server port (default: 5000)
 - `NODE_ENV` - Environment mode (development/production)
-- `MONGODB_URI` - MongoDB connection string
+- `MONGO_URI` - MongoDB connection string
 - `FRONTEND_URL` - Frontend URL for CORS configuration
 
 ### MongoDB Setup
 
 #### Local MongoDB
 ```
-MONGODB_URI=mongodb://localhost:27017/gt-project
+MONGO_URI=mongodb://localhost:27017/gt-project
 ```
 
 #### MongoDB Atlas (Cloud)
 ```
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/gt-project?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/gt-project?retryWrites=true&w=majority
 ```
 
 ## Project Structure

@@ -85,7 +85,7 @@ Edit `.env` file with your values:
 ```env
 PORT=5000
 NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/gt-project
+MONGO_URI=mongodb://localhost:27017/gt-project
 FRONTEND_URL=http://localhost:3000
 ```
 
@@ -98,7 +98,7 @@ FRONTEND_URL=http://localhost:3000
 ```env
 PORT=5000
 NODE_ENV=development
-MONGODB_URI=mongodb+srv://username:password@cluster0.mongodb.net/gt-project?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://username:password@cluster0.mongodb.net/gt-project?retryWrites=true&w=majority
 FRONTEND_URL=http://localhost:3000
 ```
 
@@ -294,7 +294,7 @@ brew services start mongodb-community
 ```
 
 **Solution 2 - Use MongoDB Atlas:**
-1. Update `MONGODB_URI` in `.env` with your Atlas connection string
+1. Update `MONGO_URI` in `.env` with your Atlas connection string
 2. Ensure your IP is whitelisted in Atlas
 
 ### Issue 3: CORS Error

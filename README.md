@@ -81,9 +81,9 @@ Edit `backend/.env`:
 ```
 PORT=5000
 NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/gt-project
+MONGO_URI=mongodb://localhost:27017/gt-project
 # OR for MongoDB Atlas:
-# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/gt-project
+# MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/gt-project
 
 FRONTEND_URL=http://localhost:3000
 ```

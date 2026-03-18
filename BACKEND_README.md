@@ -13,7 +13,7 @@ This project now includes a complete backend for handling form submissions with 
 2. **Environment Variables:**
    - Copy `.env.example` to `.env`
    - Fill in your actual values:
-     - `MONGODB_URI`: Your MongoDB Atlas connection string
+     - `MONGO_URI`: Your MongoDB Atlas connection string
      - `EMAIL_HOST`: SMTP host (e.g., smtp.gmail.com)
      - `EMAIL_PORT`: SMTP port (587 for TLS, 465 for SSL)
      - `EMAIL_USER`: Your email address

@@ -24,7 +24,7 @@ cd backend
 - [ ] `.env` contains:
   ```
   PORT=5000
-  MONGODB_URI=mongodb://localhost:27017/gt
+  MONGO_URI=mongodb://localhost:27017/gt
   NODE_ENV=development
   ```
 

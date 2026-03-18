@@ -107,7 +107,7 @@
    ├── Environment variables:
    │  ├── PORT=5000
    │  ├── NODE_ENV=development
-   │  ├── MONGODB_URI
+   │  ├── MONGO_URI
    │  └── FRONTEND_URL
    │
 ✅ Frontend Configuration
