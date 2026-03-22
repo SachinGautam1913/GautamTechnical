@@ -55,6 +55,7 @@ const services: Service[] = [
       "Performance optimization",
       "Secure authentication & APIs",
       "Deployment & maintenance support",
+      "CMS integration (optional)",
     ],
     idealFor: ["Startups", "Businesses", "SaaS products"],
     startingPrice: "₹2,500",
